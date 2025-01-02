@@ -26,6 +26,12 @@
       };
     };
     environment = {
+      systemPackages = with pkgs; [
+        dust
+        nurl
+        ouch
+        wget
+      ];
       binsh = lib.getExe pkgs.dash;
       sessionVariables.DIRENV_LOG_FORMAT = "";
     };
