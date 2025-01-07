@@ -5,8 +5,8 @@
   pkgs,
   ...
 }: {
-  options.cute.programs.fish = cutelib.mkEnable;
-  config = lib.mkIf config.cute.programs.fish {
+  options.cute.programs.cli.fish = cutelib.mkEnable;
+  config = lib.mkIf config.cute.programs.cli.fish {
     home-manager.users.pagu = {
       programs.fish = {
         enable = true;
@@ -23,7 +23,7 @@
           ga = "git add -A";
           gc = "git commit -m";
           gp = "git push -u";
-          gpo = "git push -u origin main";
+          gpo = "git push -u origin";
           gs = "git status -s";
           gsv = "git status -v";
         };

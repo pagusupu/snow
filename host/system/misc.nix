@@ -12,11 +12,18 @@ _: {
   };
   boot.enableContainers = false;
 
-  security.sudo-rs = {
-    enable = true;
-    execWheelOnly = true;
+  security = {
+    sudo-rs = {
+      enable = true;
+      execWheelOnly = true;
+      wheelNeedsPassword = false;
+    };
+    tpm2.enable = true;
   };
 
+  time = {
+    hardwareClockInLocalTime = true;
+    timeZone = "NZ";
+  };
   i18n.defaultLocale = "en_NZ.UTF-8";
-  time.timeZone = "NZ";
 }

@@ -1,41 +1,40 @@
-_: {
+{pkgs, ...}: {
   cute = {
     programs = {
-      btop = true;
-      cli-tools = true;
-      fish = true;
-      nvim = true;
-      starship = true;
-      yazi = true;
-    };
-    services = {
-      media = {
-        freshrss = true;
-        jellyfin = true;
-        komga = true;
-        navidrome = true;
-        qbittorrent = true;
+      cli = {
+        btop = true;
+        fish = true;
+        nvim = true;
+        starship = true;
+        tools = true;
+        yazi = true;
       };
-      misc = {
-        blocky = true;
-        home-assistant = true;
-        tailscale = true;
+      gui = {
+        aagl = true;
+        discord = true;
+        floorp = true;
+        steam = true;
       };
-      web = {
-        glance = true;
-        immich = true;
-        linkding = true;
-        mealie = true;
-        vaultwarden = true;
-      };
+      services.tailscale = true;
     };
   };
-  networking = {
-    domain = "pagu.cafe";
-    hostName = "aoi";
-    hostId = "a3b49b22";
+  programs.localsend.enable = true;
+
+  home-manager.users.pagu = {
+    home = {
+      packages = with pkgs; [
+        bitwarden-desktop
+        cartridges
+        feishin
+        heroic
+        radeontop
+        standardnotes
+        trayscale
+      ];
+      #stateVersion = "23.05"; # no touchy
+    };
+    programs.mpv.enable = true;
   };
   # no touchy
-  home-manager.users.pagu.home.stateVersion = "23.05";
-  system.stateVersion = "23.11";
+  #system.stateVersion = "23.11";
 }

@@ -6,8 +6,8 @@
   pkgs,
   ...
 }: {
-  options.cute.programs.yazi = cutelib.mkEnable;
-  config = lib.mkIf config.cute.programs.yazi {
+  options.cute.programs.cli.yazi = cutelib.mkEnable;
+  config = lib.mkIf config.cute.programs.cli.yazi {
     home-manager.users.pagu = {
       programs.yazi = {
         enable = true;

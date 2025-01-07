@@ -4,8 +4,8 @@
   cutelib,
   ...
 }: {
-  options.cute.programs.btop = cutelib.mkEnable;
-  config = lib.mkIf config.cute.programs.btop {
+  options.cute.programs.cli.btop = cutelib.mkEnable;
+  config = lib.mkIf config.cute.programs.cli.btop {
     home-manager.users.pagu = {
       programs.btop = {
         enable = true;

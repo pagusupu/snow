@@ -1,21 +1,24 @@
 {pkgs, ...}: {
   boot = {
     loader = {
-      timeout = 0;
-      systemd-boot.enable = true;
+      grub = {
+        enable = true;
+        configurationLimit = 5;
+        device = "nodev";
+        efiSupport = true;
+        splashImage = null;
+        useOSProber = true;
+      };
       efi.canTouchEfiVariables = true;
     };
-    swraid = {
-      enable = true;
-      mdadmConf = "MAILADDR please@shut.up";
-    };
     initrd = {
-      availableKernelModules = [ "ahci" "nvme" "sd_mod" "xhci_pci" ];
+      availableKernelModules = [ "ahci" "nvme" "sd_mod" "usb_storage" "usbhid" "xhci_pci" ];
       supportedFilesystems.btrfs = true;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [ "irqpoll" "fsck.mode=force" ];
-    kernelModules = [ "kvm-amd" ];
+    supportedFilesystems.ntfs = true;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    kernelModules = [ "amd_pstate" "amdgpu" "kvm-amd" ];
+    kernelParams = [ "amd_pstate=guided" ];
   };
   hardware = {
     graphics = {
@@ -25,9 +28,10 @@
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;
   };
-  powerManagement.cpuFreqGovernor = "powersave";
+  powerManagement.cpuFreqGovernor = "schedutil";
 
-  fileSystems = {
+  /*
+     fileSystems = {
     "/boot" = {
       device = "/dev/disk/by-label/boot";
       fsType = "vfat";
@@ -43,4 +47,5 @@
     };
   };
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
+  */
 }
