@@ -64,13 +64,15 @@
             hash = "sha256-wESy7lFWan/jTYgtKGQ3lfK69SnDZ+kDx4K1NfY4xf4=";
           };
         };
-        initLua =
-          # lua
-          ''
-            require("full-border"):setup()
-            require("no-status"):setup()
-            require("starship"):setup()
-          '';
+        initLua = let
+          setup = name: ''require("${name}"):setup()'';
+        in ''
+          ${lib.concatMapStringsSep "\n" setup [
+            "full-border"
+            "no-status"
+            "starship"
+          ]}
+        '';
       };
       # need to be in $PATH for plugins
       home.packages = with pkgs; [

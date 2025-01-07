@@ -2,9 +2,9 @@ _: {
   cute = {
     programs = {
       btop = true;
+      cli-tools = true;
       fish = true;
       nvim = true;
-      shell-misc = true;
       starship = true;
       yazi = true;
     };

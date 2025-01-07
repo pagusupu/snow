@@ -17,9 +17,9 @@
         shellAliases = {
           cat = "bat";
           cd = "z";
+          dss = "downsampler-threaded -b";
           grep = "grep --color=auto";
           ls = "eza";
-
           ga = "git add -A";
           gc = "git commit -m";
           gp = "git push -u";
@@ -48,8 +48,8 @@
         '';
       };
     };
-    environment.shells = [ pkgs.fish ];
     programs.fish.enable = true;
+    environment.shells = [ pkgs.fish ];
     users.users.pagu.shell = pkgs.fish;
   };
 }

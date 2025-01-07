@@ -53,7 +53,12 @@
           };
           nginx = host "navi" port "true" "";
         };
-        environment.systemPackages = with pkgs; [ flac streamrip sox ];
+        environment.systemPackages = with pkgs; [
+          downsampler-threaded
+          flac
+          streamrip
+          sox
+        ];
       })
     ]);
 }
