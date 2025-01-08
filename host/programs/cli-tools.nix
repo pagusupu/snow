@@ -5,8 +5,8 @@
   pkgs,
   ...
 }: {
-  options.cute.programs.cli-tools = cutelib.mkEnable;
-  config = lib.mkIf config.cute.programs.cli-tools {
+  options.cute.programs.cli.tools = cutelib.mkEnable;
+  config = lib.mkIf config.cute.programs.cli.tools {
     home-manager.users.pagu = {
       programs = {
         bat = {

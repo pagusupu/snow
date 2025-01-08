@@ -2,7 +2,7 @@ _: {
   cute = {
     programs = {
       btop = true;
-      cli-tools = true;
+      cli.tools = true;
       fish = true;
       nvim = true;
       starship = true;
@@ -29,11 +29,6 @@ _: {
         vaultwarden = true;
       };
     };
-  };
-  networking = {
-    domain = "pagu.cafe";
-    hostName = "aoi";
-    hostId = "a3b49b22";
   };
   # no touchy
   home-manager.users.pagu.home.stateVersion = "23.05";

@@ -20,6 +20,18 @@
     nixpkgs.follows = "stable";
     stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "stable";
+    };
+    qbit.url = "github:fsnkty/nixpkgs?ref=init-nixos-qbittorrent";
+
+    # parts
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "unstable";
@@ -28,24 +40,15 @@
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "unstable";
     };
-    home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     hosts = {
       url = "github:StevenBlack/hosts";
       inputs.nixpkgs.follows = "unstable";
-    };
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
-      inputs.nixpkgs.follows = "stable";
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "unstable";
     };
     flake-parts.url = "github:hercules-ci/flake-parts";
-    qbit.url = "github:fsnkty/nixpkgs?ref=init-nixos-qbittorrent";
   };
   description = "the cutest flake";
 }

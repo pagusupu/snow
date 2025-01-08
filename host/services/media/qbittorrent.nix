@@ -36,10 +36,10 @@
             GlobalUPSpeedLimit = 4000;
             MaxActiveCheckingTorrents = 2;
             MaxActiveDownloads = 3;
-            MaxActiveUploads = 300;
-            MaxActiveTorrents = 305;
-            MaxUploads = 300;
-            MaxConnections = 600;
+            MaxActiveUploads = 500;
+            MaxActiveTorrents = 505;
+            MaxUploads = 500;
+            MaxConnections = 700;
           };
           Preferences = {
             General = {

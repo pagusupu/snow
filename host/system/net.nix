@@ -3,6 +3,20 @@
   ip = "192.168.178.182";
 in {
   imports = [ inputs.hosts.nixosModule ];
+
+  networking = {
+    domain = "pagu.cafe";
+    hostName = "aoi";
+    hostId = "a3b49b22";
+    stevenBlackHosts = {
+      enable = true;
+      blockFakenews = true;
+      blockGambling = true;
+    };
+    enableIPv6 = false;
+    nameservers = [ "1.0.0.1" "1.1.1.1" ];
+    useDHCP = false;
+  };
   systemd.network = {
     enable = true;
     networks.${name} = {
@@ -12,15 +26,5 @@ in {
       address = [ "${ip}/24" ];
       routes = [ { Gateway = "192.168.178.1"; } ];
     };
-  };
-  networking = {
-    stevenBlackHosts = {
-      enable = true;
-      blockFakenews = true;
-      blockGambling = true;
-    };
-    enableIPv6 = false;
-    nameservers = [ "1.0.0.1" "1.1.1.1" ];
-    useDHCP = false;
   };
 }
