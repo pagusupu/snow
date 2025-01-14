@@ -17,7 +17,6 @@
         shellAliases = {
           cat = "bat";
           cd = "z";
-          dss = "downsampler-threaded -b";
           grep = "grep --color=auto";
           ls = "eza";
           ga = "git add -A";

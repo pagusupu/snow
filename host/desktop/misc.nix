@@ -1,4 +1,4 @@
-{lib, ...}: {
+_: {
   hardware.bluetooth = {
     enable = true;
     settings.General = {
@@ -18,16 +18,6 @@
   home-manager.users.pagu = {
     xdg = {
       enable = true;
-      desktopEntries =
-        lib.genAttrs [
-          "btop"
-          "fish"
-          "yazi"
-        ]
-        (n: {
-          name = n;
-          noDisplay = true;
-        });
       userDirs = let
         p = "/home/pagu/";
       in {
@@ -37,7 +27,6 @@
         download = p + "downloads";
         pictures = p + "pictures";
         videos = p + "pictures/videos";
-        extraConfig.XDG_SCREENSHOT_DIR = p + "pictures/screenshots";
       };
     };
     home.preferXdgDirectories = true;

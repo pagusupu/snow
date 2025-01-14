@@ -1,18 +1,11 @@
 {pkgs, ...}: {
   fonts = {
     packages = with pkgs; [
-      (google-fonts.override {
-        fonts = [
-          "Lato"
-          "Nunito"
-        ];
-      })
-      (nerdfonts.override {
-        fonts = [
-          "JetBrainsMono"
-          "NerdFontsSymbolsOnly"
-        ];
-      })
+      lato
+      nunito
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.symbols-only
+      # compat
       dejavu_fonts
       noto-fonts
       noto-fonts-cjk-sans

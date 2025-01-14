@@ -1,19 +1,21 @@
 {inputs, ...}: {
   imports = [ inputs.nix-gaming.nixosModules.pipewireLowLatency ];
-  services.pipewire = {
-    enable = true;
-    lowLatency = {
+  services = {
+    pipewire = {
       enable = true;
-      quantum = 48;
-      rate = 48000;
+      lowLatency = {
+        enable = true;
+        quantum = 48;
+        rate = 48000;
+      };
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      jack.enable = true;
+      pulse.enable = true;
     };
-    alsa = {
-      enable = true;
-      support32Bit = true;
-    };
-    jack.enable = true;
-    pulse.enable = true;
+    pulseaudio.enable = false;
   };
   security.rtkit.enable = true;
-  hardware.pulseaudio.enable = false;
 }

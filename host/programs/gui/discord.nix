@@ -8,11 +8,14 @@
 }: {
   options.cute.programs.gui.discord = cutelib.mkEnable;
   config = lib.mkIf config.cute.programs.gui.discord {
-    assertions = cutelib.assertHm "nixcord";
     home-manager.users.pagu = {
       programs.nixcord = {
         enable = true;
-        discord.enable = false;
+        discord = {
+          enable = false;
+          # https://github.com/KaylorBen/nixcord/issues/65
+          vencord.unstable = true;
+        };
         vesktop = {
           enable = true;
           package = pkgs.vesktop.override { withTTS = false; };
@@ -56,7 +59,7 @@
             voiceChatDoubleClick.enable = true;
             youtubeAdblock.enable = true;
           };
-          themeLinks = [ "https://raw.githubusercontent.com/rose-pine/discord/refs/heads/main/rose-pine.theme.css" ];
+          themeLinks = [ "https://catppuccin.github.io/discord/dist/catppuccin-frappe-pink.theme.css" ];
         };
         extraConfig.SKIP_HOST_UPDATE = true;
       };

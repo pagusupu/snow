@@ -1,7 +1,9 @@
 {
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      flake.nixosConfigurations.aoi = let
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } (let
+      system = "x86_64-linux";
+    in {
+      flake.nixosConfigurations.rin = let
         inherit (inputs.nixpkgs.lib) nixosSystem hasSuffix filesystem;
         inherit (builtins) concatMap filter;
       in
@@ -11,11 +13,11 @@
             (map toString (filesystem.listFilesRecursive x)))
           [ ./host ];
           specialArgs.inputs = inputs;
-          system = "x86_64-linux";
+          inherit system;
         };
       imports = [ ./parts ];
-      systems = [ "x86_64-linux" ];
-    };
+      systems = [ system ];
+    });
   inputs = {
     nixpkgs.follows = "unstable";
     stable.url = "github:NixOS/nixpkgs/nixos-24.11";

@@ -6,7 +6,6 @@
         configurationLimit = 5;
         device = "nodev";
         efiSupport = true;
-        splashImage = null;
         useOSProber = true;
       };
       efi.canTouchEfiVariables = true;
@@ -30,22 +29,19 @@
   };
   powerManagement.cpuFreqGovernor = "schedutil";
 
-  /*
-     fileSystems = {
+  fileSystems = {
     "/boot" = {
       device = "/dev/disk/by-label/boot";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
     };
     "/" = {
-      device = "/dev/disk/by-label/main";
+      device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
     };
-    "/storage" = {
-      device = "/dev/disk/by-label/storage";
+    "/games" = {
+      device = "/dev/disk/by-label/games";
       fsType = "btrfs";
     };
   };
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
-  */
 }

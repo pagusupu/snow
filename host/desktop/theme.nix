@@ -8,48 +8,48 @@
     imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
     gtk = {
       enable = true;
-      theme = {
-        name = "Catppuccin-Dark-Frappe";
-        package = pkgs.magnetic-catppuccin-gtk.override {
-          accent = [ "pink" ];
-          tweaks = [ "frappe" ];
-        };
-      };
-      iconTheme = {
-        name = "Breeze-Dark";
-        package = pkgs.kdePackages.breeze-icons;
-      };
-    };
-    qt = {
-      enable = true;
-      platformTheme = {
-        name = "kde";
-        package = pkgs.catppuccin-kde;
-      };
-      style = {
-        name = "Catppuccin-Frappe-Mauve";
-        package = pkgs.catppuccin-kde;
+      iconTheme.name = "breeze-dark";
+      gtk2 = {
+        # has been causing weird issues, need to do this not shit
+        extraConfig = ''
+          gtk-enable-animations=1
+          gtk-theme-name="catppuccin-frappe-mauve-standard+default"
+          gtk-primary-button-warps-slider=1
+          gtk-toolbar-style=3
+          gtk-menu-images=1
+          gtk-button-images=1
+          gtk-cursor-theme-size=24
+          gtk-cursor-theme-name="Catppuccin-Frappe-Dark-Cursors"
+          gtk-sound-theme-name="ocean"
+          gtk-icon-theme-name="breeze-dark"
+          gtk-font-name="Nunito [NeWT],  10"
+        '';
+        configLocation = "/home/pagu/.config/gtk-2.0/gtkrc";
       };
     };
     home.pointerCursor = {
-      size = 24;
+      size = 18;
       gtk.enable = true;
       x11.enable = true;
     };
     catppuccin = {
-      enable = true;
+      cursors = {
+        enable = true;
+        accent = "dark";
+      };
+      gtk = {
+        enable = true;
+        icon.enable = false;
+      };
+      fish.enable = true;
+      mpv.enable = true;
       flavor = "frappe";
-      btop.enable = false;
-      gtk.enable = false;
-      nvim.enable = false;
-      starship.enable = false;
-      yazi.enable = false;
     };
+    home.packages = [ pkgs.catppuccin-kde ];
   };
   catppuccin = {
     enable = true;
     flavor = "frappe";
-    sddm.font = "Nunito";
   };
   programs.dconf.enable = true;
 }

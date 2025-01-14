@@ -1,7 +1,7 @@
 {inputs, ...}: {
   home-manager = {
-    users.pagu.home = rec {
-      homeDirectory = "/home/${username}";
+    users.pagu.home = {
+      homeDirectory = "/home/pagu";
       username = "pagu";
     };
     extraSpecialArgs.inputs = inputs;
