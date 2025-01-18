@@ -44,7 +44,6 @@
       inputs.nixpkgs.follows = "stable";
     };
     catppuccin.url = "github:catppuccin/nix";
-    ghostty.url = "github:ghostty-org/ghostty";
     nix-gaming.url = "github:fufexan/nix-gaming";
 
     # parts

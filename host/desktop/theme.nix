@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  config,
   ...
 }: {
   imports = [ inputs.catppuccin.nixosModules.catppuccin ];
@@ -24,12 +25,14 @@
           gtk-icon-theme-name="breeze-dark"
           gtk-font-name="Nunito [NeWT],  10"
         '';
-        configLocation = "/home/pagu/.config/gtk-2.0/gtkrc";
+      };
+      cursorTheme = {
+        inherit (config.home-manager.users.pagu.home.pointerCursor) name;
+        size = 18;
       };
     };
     home.pointerCursor = {
-      size = 18;
-      gtk.enable = true;
+      size = 24;
       x11.enable = true;
     };
     catppuccin = {

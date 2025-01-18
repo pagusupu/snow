@@ -1,4 +1,4 @@
-{cutelib, ...}: {
+{pkgs, ...}: {
   services.displayManager = {
     sddm = {
       enable = true;
@@ -7,7 +7,10 @@
     defaultSession = "plasma";
   };
   catppuccin.sddm = {
-    background = cutelib.wallpaper;
+    background = pkgs.fetchurl {
+      url = "https://raw.githubusercontent.com/orangci/walls-catppuccin-mocha/master/soft-rose.jpg";
+      hash = "sha256-/ep92ydn2yWbQHAXyMT9VaBvPFviXJ+qOqXwAbrj8qM=";
+    };
     font = "nunito";
     fontSize = "12";
   };
