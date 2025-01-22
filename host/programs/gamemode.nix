@@ -1,5 +1,4 @@
 _: {
-  # is this a gui program? no, am i stupid? yes
   programs.gamemode = {
     enable = true;
     settings = {

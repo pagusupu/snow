@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  config,
   ...
 }: {
   imports = [ inputs.catppuccin.nixosModules.catppuccin ];
@@ -10,29 +9,29 @@
     gtk = {
       enable = true;
       iconTheme.name = "breeze-dark";
-      gtk2 = {
-        # has been causing weird issues, need to do this not shit
-        extraConfig = ''
-          gtk-enable-animations=1
-          gtk-theme-name="catppuccin-frappe-mauve-standard+default"
-          gtk-primary-button-warps-slider=1
-          gtk-toolbar-style=3
-          gtk-menu-images=1
-          gtk-button-images=1
-          gtk-cursor-theme-size=24
-          gtk-cursor-theme-name="Catppuccin-Frappe-Dark-Cursors"
-          gtk-sound-theme-name="ocean"
-          gtk-icon-theme-name="breeze-dark"
-          gtk-font-name="Nunito [NeWT],  10"
-        '';
-      };
-      cursorTheme = {
-        inherit (config.home-manager.users.pagu.home.pointerCursor) name;
-        size = 18;
-      };
+      # hm and kde keep overriding each other
+      # im aware how stupid this is
+      gtk2.extraConfig = ''
+        gtk-theme-name="catppuccin-frappe-mauve-standard+default"
+        gtk-cursor-theme-size=24
+        gtk-cursor-theme-name="catppuccin-frappe-dark-cursors"
+        gtk-icon-theme-name="breeze-dark"
+        gtk-cursor-theme-name = "catppuccin-frappe-dark-cursors"
+        gtk-cursor-theme-size = 24
+        gtk-icon-theme-name = "breeze-dark"
+        gtk-theme-name = "catppuccin-frappe-mauve-standard+default"
+        gtk-enable-animations=1
+        gtk-primary-button-warps-slider=1
+        gtk-toolbar-style=3
+        gtk-menu-images=1
+        gtk-button-images=1
+        gtk-sound-theme-name="ocean"
+        gtk-font-name="Nunito [NeWT],  10"
+      '';
     };
     home.pointerCursor = {
       size = 24;
+      gtk.enable = true;
       x11.enable = true;
     };
     catppuccin = {

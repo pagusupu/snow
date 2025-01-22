@@ -29,6 +29,7 @@
       cartridges
       feishin
       heroic
+      libreoffice-qt-fresh
       protonmail-desktop
       radeontop
       standardnotes
@@ -39,7 +40,5 @@
     substituters = [ "https://ezkea.cachix.org" ];
     trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
   };
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-31.7.7"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-31.7.7" ];
 }

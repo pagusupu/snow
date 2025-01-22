@@ -13,7 +13,7 @@
     etc."startscript".source = pkgs.writeShellScript "startscript" ''
       steam -silent -console &
       sudo tailscale up &
-      trayscale --hide-window
+      trayscale --hide-window &
     '';
   };
 }

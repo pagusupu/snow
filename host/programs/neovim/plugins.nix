@@ -1,16 +1,9 @@
 {
-  inputs,
   lib,
   pkgs,
   ...
 }: {
-  imports = [ inputs.nixvim.nixosModules.nixvim ];
   programs.nixvim = {
-    enable = true;
-    clipboard = {
-      register = "unnamedplus";
-      providers.wl-copy.enable = true;
-    };
     colorschemes.catppuccin = {
       enable = true;
       settings = {
@@ -19,30 +12,9 @@
           noice = true;
           notify = true;
         };
-        background.dark = "frappe";
         flavour = "frappe";
+        transparent_background = true;
       };
-    };
-    opts = {
-      autoindent = true;
-      breakindent = true;
-      smartindent = true;
-      shiftwidth = 2;
-
-      autoread = true;
-      backup = false;
-      swapfile = false;
-      undofile = true;
-
-      background = "dark";
-      number = true;
-      showmode = false;
-      termguicolors = true;
-    };
-    performance.byteCompileLua = {
-      enable = true;
-      nvimRuntime = true;
-      plugins = true;
     };
     plugins = {
       barbar = {
@@ -51,7 +23,10 @@
       };
       indent-blankline = {
         enable = true;
-        settings.scope.enabled = false;
+        settings = {
+          exclude.filetypes = [ "checkhealth" "dashboard" "help" "''" ];
+          scope.enabled = false;
+        };
       };
       lsp = {
         enable = true;
@@ -67,10 +42,6 @@
           html.enable = true;
           jsonls.enable = true;
         };
-      };
-      lualine = {
-        enable = true;
-        settings.options.theme = "catppuccin";
       };
       notify = {
         enable = true;
@@ -88,24 +59,11 @@
       autoclose.enable = true;
       lsp-format.enable = true;
       lsp-lines.enable = true;
-      markview.enable = true;
       noice.enable = true;
       rainbow-delimiters.enable = true;
+      treesitter-refactor.enable = true;
       web-devicons.enable = true;
+      yazi.enable = true;
     };
-    extraConfigVim = ''
-      aun PopUp.How-to\ disable\ mouse
-      aun PopUp.-1-
-    '';
-    enableMan = false;
-    defaultEditor = true;
-    luaLoader.enable = true;
-    vimAlias = true;
-    withPython3 = false;
-    withRuby = false;
-  };
-  environment.variables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
   };
 }

@@ -12,7 +12,7 @@
             filter (hasSuffix ".nix")
             (map toString (filesystem.listFilesRecursive x)))
           [ ./host ];
-          specialArgs.inputs = inputs;
+          specialArgs = { inherit inputs; };
           inherit system;
         };
       imports = [ ./parts ];
@@ -33,7 +33,7 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixcord = {
       url = "github:kaylorben/nixcord";
