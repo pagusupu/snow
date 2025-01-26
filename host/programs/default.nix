@@ -10,6 +10,11 @@
     localsend.enable = true;
   };
   home-manager.users.pagu = {
+    catppuccin = {
+      fish.enable = true;
+      ghostty.enable = true;
+      mpv.enable = true;
+    };
     programs = {
       ghostty = {
         enable = true;
@@ -18,7 +23,6 @@
           cursor-style = "underline";
           cursor-style-blink = false;
           term = "xterm-256color";
-          theme = "catppuccin-frappe";
         };
         enableFishIntegration = true;
       };
@@ -29,6 +33,7 @@
       cartridges
       feishin
       heroic
+      kooha
       libreoffice-qt-fresh
       protonmail-desktop
       radeontop
@@ -40,5 +45,5 @@
     substituters = [ "https://ezkea.cachix.org" ];
     trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
   };
-  nixpkgs.config.permittedInsecurePackages = [ "electron-31.7.7" ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-31.7.7" ]; # feishin
 }

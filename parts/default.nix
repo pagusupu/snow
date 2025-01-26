@@ -5,13 +5,11 @@
   ];
   perSystem = {
     pkgs,
-    inputs',
     config,
     lib,
     ...
   }: {
     devShells.default = pkgs.mkShell {
-      packages = [ inputs'.agenix.packages.default ];
       shellHook = config.pre-commit.installationScript;
     };
     packages = lib.mkMerge [

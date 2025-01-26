@@ -1,8 +1,4 @@
-{
-  inputs,
-  config,
-  ...
-}: {
+{inputs, ...}: {
   documentation = {
     enable = false;
     doc.enable = false;
@@ -25,14 +21,24 @@
     tpm2.enable = true;
   };
 
-  imports = [ inputs.agenix.nixosModules.default ];
-  age.identityPaths = [ "/etc/ssh/${config.networking.hostName}_ed25519_key" ];
-
   time = {
     hardwareClockInLocalTime = true;
     timeZone = "NZ";
   };
   i18n.defaultLocale = "en_NZ.UTF-8";
+
+  imports = [ inputs.hosts.nixosModule ];
+  networking = {
+    stevenBlackHosts = {
+      enable = true;
+      blockFakenews = true;
+      blockGambling = true;
+    };
+    enableIPv6 = false;
+    hostName = "rin";
+    hostId = "6f257938";
+    nameservers = [ "1.0.0.1" "1.1.1.1" ];
+  };
 
   users.users.pagu = {
     isNormalUser = true;

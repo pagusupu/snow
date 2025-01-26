@@ -43,8 +43,6 @@
         enable = true;
         icon.enable = false;
       };
-      fish.enable = true;
-      mpv.enable = true;
       flavor = "frappe";
     };
     home.packages = [ pkgs.catppuccin-kde ];

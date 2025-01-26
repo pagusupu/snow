@@ -45,12 +45,10 @@
     };
     catppuccin.url = "github:catppuccin/nix";
     nix-gaming.url = "github:fufexan/nix-gaming";
+    #yazi-plugins.url = "github:pagusupu/nix-yazi-plugins";
+    yazi-plugins.url = "git+file:/home/pagu/code/nix-yazi-plugins";
 
     # parts
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "unstable";
-    };
     git-hooks-nix = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "unstable";
