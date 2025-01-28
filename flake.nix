@@ -1,6 +1,8 @@
 {
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } (let
+      system = "x86_64-linux";
+    in {
       flake.nixosConfigurations.aoi = let
         inherit (inputs.nixpkgs.lib) nixosSystem hasSuffix filesystem;
         inherit (builtins) concatMap filter;
@@ -10,12 +12,12 @@
             filter (hasSuffix ".nix")
             (map toString (filesystem.listFilesRecursive x)))
           [ ./host ];
-          specialArgs.inputs = inputs;
-          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          inherit system;
         };
       imports = [ ./parts ];
-      systems = [ "x86_64-linux" ];
-    };
+      systems = [ system ];
+    });
   inputs = {
     nixpkgs.follows = "stable";
     stable.url = "github:NixOS/nixpkgs/nixos-24.11";
@@ -30,6 +32,7 @@
       inputs.nixpkgs.follows = "stable";
     };
     qbit.url = "github:fsnkty/nixpkgs?ref=init-nixos-qbittorrent";
+    yazi-plugins.url = "github:pagusupu/nix-yazi-plugins";
 
     # parts
     agenix = {

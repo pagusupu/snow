@@ -1,8 +1,9 @@
 {inputs, ...}: {
   home-manager = {
-    users.pagu.home = rec {
-      homeDirectory = "/home/${username}";
+    users.pagu.home = {
+      homeDirectory = "/home/pagu";
       username = "pagu";
+      stateVersion = "23.05";
     };
     extraSpecialArgs.inputs = inputs;
     useGlobalPkgs = true;

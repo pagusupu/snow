@@ -1,9 +1,5 @@
-{inputs, ...}: let
-  name = "enp37s0";
-  ip = "192.168.178.182";
-in {
+{inputs, ...}: {
   imports = [ inputs.hosts.nixosModule ];
-
   networking = {
     domain = "pagu.cafe";
     hostName = "aoi";
@@ -17,7 +13,10 @@ in {
     nameservers = [ "1.0.0.1" "1.1.1.1" ];
     useDHCP = false;
   };
-  systemd.network = {
+  systemd.network = let
+    name = "enp37s0";
+    ip = "192.168.178.182";
+  in {
     enable = true;
     networks.${name} = {
       enable = true;

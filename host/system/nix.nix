@@ -35,7 +35,10 @@
       };
       flake = "/home/pagu/snow/";
     };
-    system.tools.nixos-option.enable = false; # lix
+    system = {
+      stateVersion = "23.11";
+      tools.nixos-option.enable = false; # lix
+    };
   }
   {
     nix = {
