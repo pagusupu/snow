@@ -23,6 +23,16 @@
     stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "stable";
+    };
+    yazi-plugins.url = "github:pagusupu/nix-yazi-plugins";
+
     # parts
     git-hooks-nix = {
       url = "github:cachix/git-hooks.nix";
