@@ -35,7 +35,6 @@
       heroic
       kooha
       libreoffice-qt-fresh
-      protonmail-desktop
       radeontop
       standardnotes
       trayscale

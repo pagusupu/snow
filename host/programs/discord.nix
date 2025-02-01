@@ -29,7 +29,6 @@
             pinOrder = "custom";
           };
           alwaysAnimate.enable = true;
-          betterSettings.enable = true;
           betterUploadButton.enable = true;
           clearURLs.enable = true;
           disableCallIdle.enable = true;

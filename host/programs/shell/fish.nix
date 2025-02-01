@@ -11,27 +11,24 @@
         cd = "z";
         grep = "grep --color=auto";
         ls = "eza";
+        rm = "rip";
         ga = "git add -A";
         gc = "git commit -m";
-        gp = "git push -u";
-        gpo = "git push -u origin";
+        gp = "git push -u origin";
         gs = "git status -s";
         gsv = "git status -v";
       };
-      plugins = [
-        {
-          name = "autopair";
-          inherit (pkgs.fishPlugins.autopair) src;
-        }
-        {
-          name = "pufferfish";
-          src = pkgs.fetchFromGitHub {
-            owner = "nickeb96";
-            repo = "puffer-fish";
-            rev = "12d062eae0ad24f4ec20593be845ac30cd4b5923";
-            hash = "sha256-2niYj0NLfmVIQguuGTA7RrPIcorJEPkxhH6Dhcy+6Bk=";
-          };
-        }
+      plugins = let
+        plugin = name: {
+          inherit name;
+          inherit (pkgs.fishPlugins.${name}) src;
+        };
+      in [
+        (plugin "autopair")
+        (plugin "fish-bd")
+        (plugin "fish-you-should-use")
+        (plugin "puffer")
+        (plugin "sponge")
       ];
       shellInit = ''
         set fish_color_valid_path cyan

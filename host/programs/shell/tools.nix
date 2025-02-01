@@ -26,6 +26,7 @@
       dust
       nurl
       ouch
+      rip2
       wget
     ];
     binsh = lib.getExe pkgs.dash;

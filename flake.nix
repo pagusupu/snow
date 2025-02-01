@@ -35,6 +35,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hosts = {
+      url = "github:StevenBlack/hosts";
+      inputs.nixpkgs.follows = "unstable";
+    };
     nixcord = {
       url = "github:kaylorben/nixcord";
       inputs.nixpkgs.follows = "unstable";
@@ -51,10 +55,6 @@
     # parts
     git-hooks-nix = {
       url = "github:cachix/git-hooks.nix";
-      inputs.nixpkgs.follows = "unstable";
-    };
-    hosts = {
-      url = "github:StevenBlack/hosts";
       inputs.nixpkgs.follows = "unstable";
     };
     treefmt-nix = {
