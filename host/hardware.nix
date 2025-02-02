@@ -26,6 +26,7 @@
     };
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;
+    xone.enable = true;
   };
   powerManagement.cpuFreqGovernor = "schedutil";
 

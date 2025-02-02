@@ -20,5 +20,5 @@
       shellHook = config.pre-commit.installationScript;
     };
   };
-  imports = [ inputs.git-hooks-nix.flakeModule ];
+  imports = [ inputs.pre-commit-hooks.flakeModule ];
 }

@@ -18,18 +18,18 @@
         gs = "git status -s";
         gsv = "git status -v";
       };
-      plugins = let
-        plugin = name: {
+      plugins =
+        map (name: {
           inherit name;
           inherit (pkgs.fishPlugins.${name}) src;
-        };
-      in [
-        (plugin "autopair")
-        (plugin "fish-bd")
-        (plugin "fish-you-should-use")
-        (plugin "puffer")
-        (plugin "sponge")
-      ];
+        })
+        [
+          "autopair"
+          "fish-bd"
+          "fish-you-should-use"
+          "puffer"
+          "sponge"
+        ];
       shellInit = ''
         set fish_color_valid_path cyan
         set -u fish_greeting

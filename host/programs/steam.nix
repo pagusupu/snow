@@ -31,5 +31,4 @@
     sessionVariables.WINEDEBUG = "-all";
     systemPackages = [ pkgs.adwsteamgtk ];
   };
-  hardware.xone.enable = true;
 }

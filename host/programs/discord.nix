@@ -14,6 +14,10 @@
             enable = true;
             anonymiseByDefault = true;
           };
+          callTimer = {
+            enable = true;
+            format = "human";
+          };
           newGuildSettings = {
             enable = true;
             messages = "only@Mentions";
@@ -24,18 +28,16 @@
             enable = true;
             notificationVolume = 50.0;
           };
-          pinDMs = {
-            enable = false;
-            pinOrder = "custom";
-          };
           alwaysAnimate.enable = true;
           betterUploadButton.enable = true;
           clearURLs.enable = true;
           disableCallIdle.enable = true;
           favoriteEmojiFirst.enable = true;
           favoriteGifSearch.enable = true;
+          fixImagesQuality.enable = true;
           fixSpotifyEmbeds.enable = true;
           fixYoutubeEmbeds.enable = true;
+          loadingQuotes.enable = true;
           noF1.enable = true;
           noMosaic.enable = true;
           noOnboardingDelay.enable = true;
@@ -44,6 +46,7 @@
           plainFolderIcon.enable = true;
           stickerPaste.enable = true;
           voiceChatDoubleClick.enable = true;
+          webScreenShareFixes.enable = true;
           youtubeAdblock.enable = true;
         };
         themeLinks = [ "https://catppuccin.github.io/discord/dist/catppuccin-frappe-pink.theme.css" ];

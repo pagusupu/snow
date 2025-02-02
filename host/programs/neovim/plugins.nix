@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }: {
   programs.nixvim = {
@@ -45,9 +46,15 @@
       };
       notify = {
         enable = true;
-        render = "minimal";
-        stages = "fade";
-        timeout = 1000;
+        settings = {
+          fps =
+            if (config.networking.hostName == "rin")
+            then 144
+            else 60;
+          render = "minimal";
+          stages = "fade";
+          timeout = 1000;
+        };
       };
       treesitter = {
         enable = true;

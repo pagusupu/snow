@@ -35,25 +35,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hosts = {
-      url = "github:StevenBlack/hosts";
-      inputs.nixpkgs.follows = "unstable";
-    };
-    nixcord = {
-      url = "github:kaylorben/nixcord";
-      inputs.nixpkgs.follows = "unstable";
-    };
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
-      inputs.nixpkgs.follows = "stable";
-    };
+
     catppuccin.url = "github:catppuccin/nix";
+    hosts.url = "github:StevenBlack/hosts";
+    nixcord.url = "github:kaylorben/nixcord";
     nix-gaming.url = "github:fufexan/nix-gaming";
+    nixvim.url = "github:nix-community/nixvim";
     #yazi-plugins.url = "github:pagusupu/nix-yazi-plugins";
     yazi-plugins.url = "git+file:/home/pagu/code/nix-yazi-plugins";
 
     # parts
-    git-hooks-nix = {
+    pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "unstable";
     };
