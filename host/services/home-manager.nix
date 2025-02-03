@@ -5,7 +5,7 @@
       username = "pagu";
       stateVersion = "23.05";
     };
-    extraSpecialArgs.inputs = inputs;
+    extraSpecialArgs = { inherit inputs; };
     useGlobalPkgs = true;
     useUserPackages = true;
   };

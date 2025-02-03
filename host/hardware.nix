@@ -25,7 +25,7 @@
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;
   };
-  powerManagement.cpuFreqGovernor = "powersave";
+  #powerManagement.cpuFreqGovernor = "powersave";
 
   fileSystems = {
     "/boot" = {

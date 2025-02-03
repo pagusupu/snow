@@ -41,6 +41,9 @@
           cssls.enable = true;
           html.enable = true;
           jsonls.enable = true;
+          marksman.enable = true;
+          taplo.enable = true;
+          yamlls.enable = true;
         };
       };
       notify = {

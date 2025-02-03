@@ -11,6 +11,7 @@
         cd = "z";
         grep = "grep --color=auto";
         ls = "eza";
+        rm = "rip";
         ga = "git add -A";
         gc = "git commit -m";
         gp = "git push -u";

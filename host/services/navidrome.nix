@@ -49,7 +49,6 @@ lib.mkMerge [
     environment.systemPackages = with pkgs; [
       downsampler-threaded
       flac
-      streamrip
       sox
     ];
   })
