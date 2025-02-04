@@ -10,25 +10,26 @@
       };
       efi.canTouchEfiVariables = true;
     };
-    initrd = {
-      availableKernelModules = [ "ahci" "nvme" "sd_mod" "usb_storage" "usbhid" "xhci_pci" ];
-      supportedFilesystems.btrfs = true;
-    };
+
+    initrd.supportedFilesystems.btrfs = true;
     supportedFilesystems.ntfs = true;
+
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
-    kernelModules = [ "amd_pstate" "amdgpu" "kvm-amd" ];
-    kernelParams = [ "amd_pstate=guided" ];
+    kernelParams = ["amd_pstate=guided"];
+    kernelModules = ["amd_pstate" "amdgpu" "kvm-amd"];
+    initrd.availableKernelModules = ["ahci" "nvme" "sd_mod" "usb_storage" "usbhid" "xhci_pci"];
   };
+  powerManagement.cpuFreqGovernor = "schedutil";
+
   hardware = {
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [ libvdpau-va-gl vaapiVdpau ];
+      extraPackages = with pkgs; [libvdpau-va-gl vaapiVdpau];
     };
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;
     xone.enable = true;
   };
-  powerManagement.cpuFreqGovernor = "schedutil";
 
   fileSystems = {
     "/boot" = {
@@ -44,5 +45,5 @@
       fsType = "btrfs";
     };
   };
-  swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
+  swapDevices = [{device = "/dev/disk/by-label/swap";}];
 }

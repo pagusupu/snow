@@ -1,6 +1,6 @@
 {
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } (let
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} (let
       system = "x86_64-linux";
     in {
       flake.nixosConfigurations.rin = let
@@ -11,12 +11,12 @@
           modules = concatMap (x:
             filter (hasSuffix ".nix")
             (map toString (filesystem.listFilesRecursive x)))
-          [ ./host ];
-          specialArgs = { inherit inputs; };
+          [./host];
+          specialArgs = {inherit inputs;};
           inherit system;
         };
-      imports = [ ./parts ];
-      systems = [ system ];
+      imports = [./parts];
+      systems = [system];
     });
   inputs = {
     nixpkgs.follows = "unstable";
@@ -40,7 +40,7 @@
     hosts.url = "github:StevenBlack/hosts";
     nixcord.url = "github:kaylorben/nixcord";
     nix-gaming.url = "github:fufexan/nix-gaming";
-    nixvim.url = "github:nix-community/nixvim";
+    paguvim.url = "github:pagusupu/paguvim";
     #yazi-plugins.url = "github:pagusupu/nix-yazi-plugins";
     yazi-plugins.url = "git+file:/home/pagu/code/nix-yazi-plugins";
 

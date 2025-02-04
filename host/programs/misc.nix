@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  imports = [ inputs.aagl.nixosModules.default ];
+  imports = [inputs.aagl.nixosModules.default];
   programs = {
     honkers-railway-launcher.enable = true;
     kdeconnect.enable = true;
@@ -38,11 +38,12 @@
       radeontop
       standardnotes
       trayscale
+      inputs.paguvim.packages.${pkgs.system}.default
     ];
   };
   nix.settings = {
-    substituters = [ "https://ezkea.cachix.org" ];
-    trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
+    substituters = ["https://ezkea.cachix.org"];
+    trusted-public-keys = ["ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="];
   };
-  nixpkgs.config.permittedInsecurePackages = [ "electron-31.7.7" ]; # feishin
+  nixpkgs.config.permittedInsecurePackages = ["electron-31.7.7"]; # feishin
 }

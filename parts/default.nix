@@ -15,7 +15,7 @@
         directory = ./pkgs;
         inherit (pkgs) callPackage;
       })
-      { nix = pkgs.nixVersions.latest; }
+      {nix = pkgs.nixVersions.latest;}
     ];
     overlayAttrs = config.packages;
   };

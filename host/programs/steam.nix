@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  imports = [ inputs.nix-gaming.nixosModules.platformOptimizations ];
+  imports = [inputs.nix-gaming.nixosModules.platformOptimizations];
   programs.steam = {
     enable = true;
     gamescopeSession = {
@@ -21,7 +21,7 @@
       ];
       env.WLR_RENDERER = "vulkan";
     };
-    extraCompatPackages = [ pkgs.proton-ge-bin ];
+    extraCompatPackages = [pkgs.proton-ge-bin];
     localNetworkGameTransfers.openFirewall = true;
     remotePlay.openFirewall = true;
     platformOptimizations.enable = true;
@@ -29,6 +29,6 @@
   };
   environment = {
     sessionVariables.WINEDEBUG = "-all";
-    systemPackages = [ pkgs.adwsteamgtk ];
+    systemPackages = [pkgs.adwsteamgtk];
   };
 }

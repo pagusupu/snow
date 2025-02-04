@@ -16,7 +16,7 @@
       eza = {
         enable = true;
         icons = "auto";
-        extraOptions = [ "--group-directories-first" ];
+        extraOptions = ["--group-directories-first"];
       };
       zoxide.enable = true;
     };

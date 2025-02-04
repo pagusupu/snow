@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  perSystem = {config, ...}: {
+  perSystem = _: {
     treefmt = {
       settings.global.excludes = [
         ".direnv/**"
@@ -7,10 +7,7 @@
         "parts/secrets/*.age"
       ];
       programs = {
-        alejandra = {
-          enable = true;
-          package = config.packages.alejandra-custom;
-        };
+        alejandra.enable = true;
         deadnix.enable = true;
         mdformat.enable = true;
         statix.enable = true;
@@ -19,5 +16,5 @@
       projectRootFile = "flake.nix";
     };
   };
-  imports = [ inputs.treefmt-nix.flakeModule ];
+  imports = [inputs.treefmt-nix.flakeModule];
 }

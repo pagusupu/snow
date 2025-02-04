@@ -23,6 +23,6 @@
       };
       verbose = false;
     };
-    kernelParams = [ "quiet" ];
+    kernelParams = ["quiet"];
   };
 }

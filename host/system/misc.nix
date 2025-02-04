@@ -27,7 +27,7 @@
   };
   i18n.defaultLocale = "en_NZ.UTF-8";
 
-  imports = [ inputs.hosts.nixosModule ];
+  imports = [inputs.hosts.nixosModule];
   networking = {
     stevenBlackHosts = {
       enable = true;
@@ -37,12 +37,12 @@
     enableIPv6 = false;
     hostName = "rin";
     hostId = "6f257938";
-    nameservers = [ "1.0.0.1" "1.1.1.1" ];
+    nameservers = ["1.0.0.1" "1.1.1.1"];
   };
 
   users.users.pagu = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = ["wheel"];
     uid = 1000;
   };
 }

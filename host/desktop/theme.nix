@@ -3,9 +3,9 @@
   pkgs,
   ...
 }: {
-  imports = [ inputs.catppuccin.nixosModules.catppuccin ];
+  imports = [inputs.catppuccin.nixosModules.catppuccin];
   home-manager.users.pagu = {
-    imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
+    imports = [inputs.catppuccin.homeManagerModules.catppuccin];
     gtk = {
       enable = true;
       iconTheme.name = "breeze-dark";
@@ -45,7 +45,7 @@
       };
       flavor = "frappe";
     };
-    home.packages = [ pkgs.catppuccin-kde ];
+    home.packages = [pkgs.catppuccin-kde];
   };
   catppuccin = {
     enable = true;
