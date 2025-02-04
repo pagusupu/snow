@@ -1,6 +1,7 @@
 {inputs, ...}: {
   imports = [
-    ./fmt.nix
+    ./treefmt.nix
+    ./pre-commit.nix
     inputs.flake-parts.flakeModules.easyOverlay
   ];
   perSystem = {
@@ -9,15 +10,12 @@
     lib,
     ...
   }: {
-    devShells.default = pkgs.mkShell {
-      shellHook = config.pre-commit.installationScript;
-    };
     packages = lib.mkMerge [
       (lib.packagesFromDirectoryRecursive {
         directory = ./pkgs;
         inherit (pkgs) callPackage;
       })
-      { nix = pkgs.lix; }
+      {nix = pkgs.nixVersions.latest;}
     ];
     overlayAttrs = config.packages;
   };

@@ -3,7 +3,7 @@
     enable = true;
     openFirewall = true;
     useRoutingFeatures = "both";
-    extraUpFlags = [ "--accept-risk=" ];
+    extraUpFlags = ["--accept-risk="];
   };
   home-manager = {
     users.pagu.home = {
@@ -15,5 +15,5 @@
     useGlobalPkgs = true;
     useUserPackages = true;
   };
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
+  imports = [inputs.home-manager.nixosModules.home-manager];
 }

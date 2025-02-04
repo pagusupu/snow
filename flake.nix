@@ -1,6 +1,6 @@
 {
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } (let
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} (let
       system = "x86_64-linux";
     in {
       flake.nixosConfigurations.HOSTNAME = let
@@ -11,12 +11,12 @@
           modules = concatMap (x:
             filter (hasSuffix ".nix")
             (map toString (filesystem.listFilesRecursive x)))
-          [ ./host ];
-          specialArgs = { inherit inputs; };
+          [./host];
+          specialArgs = {inherit inputs;};
           inherit system;
         };
-      imports = [ ./parts ];
-      systems = [ system ];
+      imports = [./parts];
+      systems = [system];
     });
   inputs = {
     nixpkgs.follows = "unstable";
@@ -27,14 +27,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
-      inputs.nixpkgs.follows = "stable";
-    };
+
+    paguvim.url = "github:pagusupu/paguvim";
     yazi-plugins.url = "github:pagusupu/nix-yazi-plugins";
 
     # parts
-    git-hooks-nix = {
+    pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "unstable";
     };

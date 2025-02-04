@@ -34,6 +34,6 @@
       starship
       transmission_4 # torrent-preview
     ];
-    imports = [ inputs.yazi-plugins.legacyPackages.x86_64-linux.homeManagerModules.default ];
+    imports = [inputs.yazi-plugins.legacyPackages.x86_64-linux.homeManagerModules.default];
   };
 }
