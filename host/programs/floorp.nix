@@ -17,14 +17,19 @@
           ublock-origin
         ];
         search = {
-          default = "DuckDuckGo";
+          default = "Startpage";
           order = [
-            "DuckDuckGo"
+            "Startpage"
             "Google"
           ];
           engines = {
+            "Warframe Wiki" = {
+              urls = [{template = "https://wiki.warframe.com/?search={searchTerms}";}];
+              definedAliases = ["@wf"];
+            };
+            "Google".metadata.alias = "@g";
             "Bing".metaData.hidden = true;
-            "Startpage".metaData.hidden = true;
+            "DuckDuckGo".metaData.hidden = true;
             "You.com".metaData.hidden = true;
           };
           force = true;

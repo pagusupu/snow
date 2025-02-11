@@ -22,8 +22,7 @@
         map (name: {
           inherit name;
           inherit (pkgs.fishPlugins.${name}) src;
-        })
-        [
+        }) [
           "autopair"
           "fish-bd"
           "fish-you-should-use"

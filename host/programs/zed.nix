@@ -2,7 +2,7 @@
   home-manager.users.pagu = {
     programs.zed-editor = {
       enable = true;
-      extensions = ["catppuccin" "git-firefly" "nix"];
+      extensions = ["catppuccin" "git-firefly" "nix" "toml"];
       userSettings = {
         theme = {
           mode = "dark";

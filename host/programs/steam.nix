@@ -3,7 +3,6 @@
   pkgs,
   ...
 }: {
-  imports = [inputs.nix-gaming.nixosModules.platformOptimizations];
   programs.steam = {
     enable = true;
     gamescopeSession = {
@@ -31,4 +30,5 @@
     sessionVariables.WINEDEBUG = "-all";
     systemPackages = [pkgs.adwsteamgtk];
   };
+  imports = [inputs.nix-gaming.nixosModules.platformOptimizations];
 }

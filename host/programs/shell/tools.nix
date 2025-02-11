@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   home-manager.users.pagu = {
@@ -28,6 +29,7 @@
       ouch
       rip2
       wget
+      inputs.paguvim.packages.${pkgs.system}.default
     ];
     binsh = lib.getExe pkgs.dash;
     sessionVariables.DIRENV_LOG_FORMAT = "";

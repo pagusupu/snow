@@ -6,7 +6,6 @@
       kate
       khelpcenter
       krdp
-      kwalletmanager
       plasma-browser-integration
       plasma-workspace-wallpapers
     ];
