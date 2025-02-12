@@ -41,8 +41,6 @@
     nixcord.url = "github:kaylorben/nixcord";
     nix-gaming.url = "github:fufexan/nix-gaming";
     paguvim.url = "github:pagusupu/paguvim";
-    #yazi-plugins.url = "github:pagusupu/nix-yazi-plugins";
-    yazi-plugins.url = "git+file:/home/pagu/code/nix-yazi-plugins";
 
     # parts
     pre-commit-hooks = {
