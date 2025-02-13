@@ -5,9 +5,9 @@
       username = "pagu";
       stateVersion = "23.05";
     };
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     useGlobalPkgs = true;
     useUserPackages = true;
   };
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
+  imports = [inputs.home-manager.nixosModules.home-manager];
 }

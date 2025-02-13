@@ -31,7 +31,6 @@
     hosts.url = "github:StevenBlack/hosts";
     paguvim.url = "github:pagusupu/paguvim";
     qbit.url = "github:fsnkty/nixpkgs?ref=init-nixos-qbittorrent";
-    yazi-plugins.url = "github:pagusupu/nix-yazi-plugins";
 
     # parts
     pre-commit-hooks = {

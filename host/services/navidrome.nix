@@ -11,7 +11,7 @@ lib.mkMerge [
   in {
     virtualisation.oci-containers.containers."feishin" = {
       image = "ghcr.io/jeffvli/feishin:0.12.1";
-      ports = [ "${builtins.toString port}:9180" ];
+      ports = ["${builtins.toString port}:9180"];
     };
     services.nginx = nginxlib.host "fish" port "" "";
   })

@@ -5,7 +5,7 @@
   inputs,
   ...
 }: {
-  imports = [ "${inputs.qbit}/nixos/modules/services/torrent/qbittorrent.nix" ];
+  imports = ["${inputs.qbit}/nixos/modules/services/torrent/qbittorrent.nix"];
   services = let
     port = 8077;
   in {

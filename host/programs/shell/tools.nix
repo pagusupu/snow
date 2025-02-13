@@ -19,6 +19,21 @@
         icons = "auto";
         extraOptions = ["--group-directories-first"];
       };
+      yazi = {
+        enable = true;
+        package = inputs.unstable.legacyPackages.${pkgs.system}.yazi;
+        settings.manager = {
+          show_hidden = true;
+          sort_by = "natural";
+          sort_dir_first = true;
+        };
+        # installed via ya
+        initLua = ''
+          require("full-border"):setup()
+          require("no-status"):setup()
+          require("starship"):setup()
+        '';
+      };
       zoxide.enable = true;
     };
   };

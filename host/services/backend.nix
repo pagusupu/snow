@@ -21,13 +21,13 @@ lib.mkMerge [
       recommendedProxySettings = true;
       recommendedTlsSettings = true;
     };
-    networking.firewall.allowedTCPPorts = [ 80 443 1313 ];
+    networking.firewall.allowedTCPPorts = [80 443 1313];
   }
   {
     security.acme = {
       acceptTerms = true;
       defaults.email = "amce@pagu.cafe";
     };
-    users.users.nginx.extraGroups = [ "acme" ];
+    users.users.nginx.extraGroups = ["acme"];
   }
 ]

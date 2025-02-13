@@ -26,8 +26,8 @@ lib.mkMerge [
   in {
     virtualisation.oci-containers.containers."linkding" = {
       image = "sissbruecker/linkding:latest";
-      ports = [ "${builtins.toString port}:9090" ];
-      volumes = [ "/storage/linkding/:/etc/linkding/data" ];
+      ports = ["${builtins.toString port}:9090"];
+      volumes = ["/storage/linkding/:/etc/linkding/data"];
       environment = {
         LD_SUPERUSER_NAME = "pagu";
         LD_SUPERUSER_PASSWORD = "changeme"; # initial only
@@ -52,7 +52,7 @@ lib.mkMerge [
     };
     fileSystems."/var/lib/private/mealie" = {
       device = "/storage/mealie";
-      options = [ "bind" ];
+      options = ["bind"];
     };
   })
   (let

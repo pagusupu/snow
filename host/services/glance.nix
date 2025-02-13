@@ -16,7 +16,7 @@ _: {
                   type = "clock";
                   hour-format = "12h";
                   timezones = let
-                    zone = timezone: label: { inherit timezone label; };
+                    zone = timezone: label: {inherit timezone label;};
                   in [
                     (zone "US/Central" "US/Central")
                     (zone "Europe/London" "London")
@@ -24,7 +24,7 @@ _: {
                     (zone "Australia/Sydney" "Sydney")
                   ];
                 }
-                { type = "calendar"; }
+                {type = "calendar";}
               ];
               size = "small";
             }
