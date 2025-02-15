@@ -35,7 +35,7 @@
       blockGambling = true;
     };
     enableIPv6 = false;
-    hostName = "rin";
+    hostName = "ryo";
     hostId = "6f257938";
     nameservers = ["1.0.0.1" "1.1.1.1"];
   };

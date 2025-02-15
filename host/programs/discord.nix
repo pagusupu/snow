@@ -49,7 +49,6 @@
           webScreenShareFixes.enable = true;
           youtubeAdblock.enable = true;
         };
-        themeLinks = ["https://catppuccin.github.io/discord/dist/catppuccin-frappe-pink.theme.css"];
       };
       extraConfig.SKIP_HOST_UPDATE = true;
     };

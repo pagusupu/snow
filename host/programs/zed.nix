@@ -5,9 +5,9 @@
       extensions = ["catppuccin" "git-firefly" "nix" "toml"];
       userSettings = {
         theme = {
-          mode = "dark";
-          dark = "Catppuccin Frappé - No Italics";
-          light = "Catppuccin Frappé - No Italics";
+          mode = "system";
+          dark = "One Dark";
+          light = "One Light";
         };
         languages.Nix = {
           formatter.external.command = "nixfmt";

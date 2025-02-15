@@ -3,7 +3,7 @@
     inputs.flake-parts.lib.mkFlake {inherit inputs;} (let
       system = "x86_64-linux";
     in {
-      flake.nixosConfigurations.rin = let
+      flake.nixosConfigurations.ryo = let
         inherit (inputs.nixpkgs.lib) nixosSystem hasSuffix filesystem;
         inherit (builtins) concatMap filter;
       in
@@ -23,10 +23,6 @@
     stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
-      inputs.nixpkgs.follows = "unstable";
-    };
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "unstable";
@@ -36,10 +32,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    catppuccin.url = "github:catppuccin/nix";
     hosts.url = "github:StevenBlack/hosts";
     nixcord.url = "github:kaylorben/nixcord";
-    nix-gaming.url = "github:fufexan/nix-gaming";
     paguvim.url = "github:pagusupu/paguvim";
 
     # parts

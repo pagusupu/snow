@@ -1,12 +1,9 @@
 {pkgs, ...}: {
   boot = {
     loader = {
-      grub = {
+      systemd-boot = {
         enable = true;
-        configurationLimit = 5;
-        device = "nodev";
-        efiSupport = true;
-        useOSProber = true;
+        configurationLimit = 1;
       };
       efi.canTouchEfiVariables = true;
     };
@@ -15,11 +12,10 @@
     supportedFilesystems.ntfs = true;
 
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
-    kernelParams = ["amd_pstate=guided"];
-    kernelModules = ["amd_pstate" "amdgpu" "kvm-amd"];
-    initrd.availableKernelModules = ["ahci" "nvme" "sd_mod" "usb_storage" "usbhid" "xhci_pci"];
+    kernelModules = ["amdgpu" "kvm-amd"];
+    initrd.availableKernelModules = ["nvme" "sd_mod" "sdhci_pci" "usb_storage" "xhci_pci"];
   };
-  powerManagement.cpuFreqGovernor = "schedutil";
+  powerManagement.cpuFreqGovernor = "powersave";
 
   hardware = {
     graphics = {
@@ -28,7 +24,6 @@
     };
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;
-    xone.enable = true;
   };
 
   fileSystems = {
@@ -38,10 +33,6 @@
     };
     "/" = {
       device = "/dev/disk/by-label/nixos";
-      fsType = "btrfs";
-    };
-    "/games" = {
-      device = "/dev/disk/by-label/games";
       fsType = "btrfs";
     };
   };

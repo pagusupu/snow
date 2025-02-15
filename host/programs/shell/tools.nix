@@ -35,9 +35,7 @@
       };
       zoxide.enable = true;
     };
-  };
-  environment = {
-    systemPackages = with pkgs; [
+    home.packages = with pkgs; [
       dust
       nurl
       ouch
@@ -45,6 +43,8 @@
       wget
       inputs.paguvim.packages.${pkgs.system}.default
     ];
+  };
+  environment = {
     binsh = lib.getExe pkgs.dash;
     sessionVariables.DIRENV_LOG_FORMAT = "";
   };
