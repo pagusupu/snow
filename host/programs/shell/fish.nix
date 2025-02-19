@@ -30,8 +30,14 @@
           "sponge"
         ];
       shellInit = ''
-        set fish_color_valid_path cyan
         set -u fish_greeting
+
+        set fish_color_valid_path yellow
+        set fish_color_autosuggestion brblack
+        set fish_color_param blue
+        set fish_color_option green
+        set fish_color_command magenta
+        set fish_color_error red
       '';
     };
   };

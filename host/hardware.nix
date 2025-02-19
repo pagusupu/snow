@@ -9,6 +9,7 @@
         useOSProber = true;
       };
       efi.canTouchEfiVariables = true;
+      timeout = 1;
     };
 
     initrd.supportedFilesystems.btrfs = true;

@@ -7,13 +7,12 @@
     programs.floorp = {
       enable = true;
       profiles.pagu = {
-        extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+        extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           bitwarden
           darkreader
           linkding-extension
           return-youtube-dislikes
           sponsorblock
-          stylus
           ublock-origin
         ];
         search = {
@@ -27,7 +26,6 @@
               urls = [{template = "https://wiki.warframe.com/?search={searchTerms}";}];
               definedAliases = ["@wf"];
             };
-            "Google".metadata.alias = "@g";
             "Bing".metaData.hidden = true;
             "DuckDuckGo".metaData.hidden = true;
             "You.com".metaData.hidden = true;

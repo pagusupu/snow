@@ -2,12 +2,17 @@
   home-manager.users.pagu = {
     programs.zed-editor = {
       enable = true;
-      extensions = ["catppuccin" "git-firefly" "nix" "toml"];
+      extensions = [
+        "catppuccin"
+        "git-firefly"
+        "nix"
+        "toml"
+      ];
       userSettings = {
         theme = {
-          mode = "dark";
-          dark = "Catppuccin Frappé - No Italics";
-          light = "Catppuccin Frappé - No Italics";
+          mode = "system";
+          dark = "One Dark";
+          light = "One Light";
         };
         languages.Nix = {
           formatter.external.command = "nixfmt";
@@ -18,7 +23,7 @@
         buffer_font_family = "JetBrainsMono Nerd Font";
         load_direnv = "direct";
       };
-      extraPackages = [pkgs.nil pkgs.nixfmt-rfc-style];
+      extraPackages = with pkgs; [nil nixfmt-rfc-style];
     };
   };
 }

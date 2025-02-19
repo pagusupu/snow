@@ -1,4 +1,4 @@
-_: {
+{lib, ...}: {
   hardware.bluetooth = {
     enable = true;
     settings.General = {
@@ -18,6 +18,23 @@ _: {
   home-manager.users.pagu = {
     xdg = {
       enable = true;
+      desktopEntries =
+        lib.genAttrs [
+          "base"
+          "calc"
+          "draw"
+          "impress"
+          "math"
+          "writer"
+
+          "fish"
+          "mpv"
+          "nvim"
+          "yazi"
+        ] (n: {
+          name = n;
+          noDisplay = true;
+        });
       userDirs = let
         p = "/home/pagu/";
       in {

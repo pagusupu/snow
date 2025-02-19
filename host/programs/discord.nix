@@ -49,7 +49,7 @@
           webScreenShareFixes.enable = true;
           youtubeAdblock.enable = true;
         };
-        themeLinks = ["https://catppuccin.github.io/discord/dist/catppuccin-frappe-pink.theme.css"];
+        themeLinks = ["https://raw.githubusercontent.com/pagusupu/midnight-discord/refs/heads/master/midnight.theme.css"];
       };
       extraConfig.SKIP_HOST_UPDATE = true;
     };

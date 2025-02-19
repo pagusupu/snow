@@ -1,19 +1,14 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: {
   programs = {
     honkers-railway-launcher.enable = true;
-    kdeconnect.enable = true;
     localsend.enable = true;
   };
   home-manager.users.pagu = {
-    catppuccin = {
-      fish.enable = true;
-      ghostty.enable = true;
-      mpv.enable = true;
-    };
     programs = {
       ghostty = {
         enable = true;
@@ -23,6 +18,7 @@
           cursor-style-blink = false;
           keybind = ["ctrl+shift+w=close_surface"];
           term = "xterm-256color";
+          theme = "Espresso";
         };
         enableFishIntegration = true;
       };
@@ -33,15 +29,20 @@
       cartridges
       celluloid
       feishin
-      gnome-calculator
       heroic
-      kooha
       libreoffice-qt-fresh
+      prismlauncher
+      qbittorrent
       radeontop
       signal-desktop
       standardnotes
-      trayscale
     ];
+    services.trayscale.enable = true;
+  };
+  environment.etc = {
+    "jdks/21".source = lib.getBin pkgs.openjdk21;
+    "jdks/17".source = lib.getBin pkgs.openjdk17;
+    "jdks/8".source = lib.getBin pkgs.openjdk8;
   };
   nix.settings = {
     substituters = ["https://ezkea.cachix.org"];

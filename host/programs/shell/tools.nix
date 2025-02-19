@@ -8,7 +8,7 @@
     programs = {
       bat = {
         enable = true;
-        config.theme = "base16";
+        config.theme = "ansi";
       };
       direnv = {
         enable = true;
@@ -35,16 +35,16 @@
       };
       zoxide.enable = true;
     };
-  };
-  environment = {
-    systemPackages = with pkgs; [
+    home.packages = with pkgs; [
       dust
-      nurl
+      #nurl
       ouch
       rip2
       wget
       inputs.paguvim.packages.${pkgs.system}.default
     ];
+  };
+  environment = {
     binsh = lib.getExe pkgs.dash;
     sessionVariables.DIRENV_LOG_FORMAT = "";
   };
