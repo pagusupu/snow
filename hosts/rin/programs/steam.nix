@@ -7,7 +7,7 @@
     steam = {
       enable = true;
       gamescopeSession = {
-        enable = false;
+        enable = true;
         args = [
           "-b"
           "-f"
@@ -25,7 +25,6 @@
       localNetworkGameTransfers.openFirewall = true;
       remotePlay.openFirewall = true;
       platformOptimizations.enable = true;
-      protontricks.enable = true;
     };
     gamescope.enable = true;
   };

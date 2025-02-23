@@ -11,6 +11,7 @@
         cd = "z";
         grep = "grep --color=auto";
         ls = "eza";
+        nf = "nix flake";
         rm = "rip";
         ga = "git add -A";
         gc = "git commit -m";
