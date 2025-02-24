@@ -8,19 +8,17 @@
     home.packages = with pkgs; [
       cartridges
       heroic
+      prismlauncher
       qbittorrent
       radeontop
       signal-desktop
     ];
   };
 
-  environment = {
-    etc = {
-      "jdks/21".source = lib.getBin pkgs.openjdk21;
-      "jdks/17".source = lib.getBin pkgs.openjdk17;
-      "jdks/8".source = lib.getBin pkgs.openjdk8;
-    };
-    systemPackages = [pkgs.prismlauncher];
+  environment.etc = {
+    "jdks/21".source = lib.getBin pkgs.openjdk21;
+    "jdks/17".source = lib.getBin pkgs.openjdk17;
+    "jdks/8".source = lib.getBin pkgs.openjdk8;
   };
 
   imports = [inputs.aagl.nixosModules.default];

@@ -21,6 +21,7 @@
       feishin
       impression
       libreoffice-qt-fresh
+      kdePackages.okular
       resources
       standardnotes
     ];

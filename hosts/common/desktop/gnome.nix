@@ -11,7 +11,6 @@
   environment = {
     systemPackages = with pkgs;
       [
-        evince
         gnome-calculator
         gnome-tweaks
         loupe
