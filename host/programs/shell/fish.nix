@@ -11,6 +11,7 @@
         cd = "z";
         grep = "grep --color=auto";
         ls = "eza";
+        nf = "nix flake";
         rm = "rip";
         ga = "git add -A";
         gc = "git commit -m";
@@ -22,8 +23,7 @@
         map (name: {
           inherit name;
           inherit (pkgs.fishPlugins.${name}) src;
-        })
-        [
+        }) [
           "autopair"
           "fish-bd"
           "fish-you-should-use"
@@ -31,8 +31,14 @@
           "sponge"
         ];
       shellInit = ''
-        set fish_color_valid_path cyan
         set -u fish_greeting
+
+        set fish_color_valid_path yellow
+        set fish_color_autosuggestion brblack
+        set fish_color_param blue
+        set fish_color_option green
+        set fish_color_command magenta
+        set fish_color_error red
       '';
     };
   };

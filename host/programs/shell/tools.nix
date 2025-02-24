@@ -8,7 +8,7 @@
     programs = {
       bat = {
         enable = true;
-        config.theme = "base16";
+        config.theme = "ansi";
       };
       direnv = {
         enable = true;
@@ -46,7 +46,10 @@
       wget
       inputs.paguvim.packages.${pkgs.system}.default
     ];
+    sessionVariables = {
+      DIRENV_LOG_FORMAT = "";
+      EDITOR = "nvim";
+    };
     binsh = lib.getExe pkgs.dash;
-    sessionVariables.DIRENV_LOG_FORMAT = "";
   };
 }

@@ -92,10 +92,10 @@ _: {
       ];
       theme = {
         light = false;
-        background-color = "229 19 23";
-        primary-color = "277 59 76";
-        positive-color = "96 44 68";
-        negative-color = "359 68 71";
+        background-color = "0 0 14";
+        primary-color = "331 58 61";
+        positive-color = "133 76 75";
+        negative-color = "9 100 69";
       };
       branding.hide-footer = true;
     };

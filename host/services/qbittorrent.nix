@@ -49,8 +49,8 @@
           WebUI = {
             AlternativeUIEnabled = true;
             RootFolder = "${pkgs.fetchzip {
-              url = "https://github.com/VueTorrent/VueTorrent/releases/download/v2.21.0/vuetorrent.zip";
-              hash = "sha256-ELerk/4q+eR3rmCx/jFoDirrmx12D+5JBfDZjkPK5wA=";
+              url = "https://github.com/VueTorrent/VueTorrent/releases/download/v2.22.0/vuetorrent.zip";
+              hash = "sha256-UJflyTyftWSIOi942OgH/tvylyAeo6EjR14U0SHk6bs=";
             }}";
 
             Username = "pagu";
