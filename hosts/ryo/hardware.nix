@@ -5,13 +5,13 @@
         enable = true;
         configurationLimit = 1;
       };
+      timeout = 0;
       efi.canTouchEfiVariables = true;
     };
 
     initrd.supportedFilesystems.btrfs = true;
     supportedFilesystems.ntfs = true;
 
-    kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelModules = ["amdgpu" "kvm-amd"];
     initrd.availableKernelModules = ["nvme" "sd_mod" "sdhci_pci" "usb_storage" "xhci_pci"];
   };
