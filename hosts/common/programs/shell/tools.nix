@@ -37,7 +37,7 @@
     };
     home.packages = with pkgs; [
       dust
-      #nurl
+      nurl
       ouch
       rip2
       wget

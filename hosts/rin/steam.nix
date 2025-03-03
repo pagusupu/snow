@@ -13,7 +13,7 @@
           "-f"
 
           "-H 1080"
-          "-o 30" # doesnt seem to work on plasma
+          "-o 30" # doesnt seem to work on plasma or gnome
           "-r 144"
 
           "--backend wayland"

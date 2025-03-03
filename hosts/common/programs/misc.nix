@@ -21,9 +21,9 @@
       feishin
       impression
       libreoffice-qt-fresh
+      obsidian
       kdePackages.okular
       resources
-      standardnotes
     ];
     services.trayscale.enable = true;
   };

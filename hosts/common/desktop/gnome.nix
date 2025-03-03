@@ -21,6 +21,7 @@
       ++ (with pkgs.gnomeExtensions; [
         appindicator
         fullscreen-avoider
+        quick-settings-tweaker
       ]);
     gnome.excludePackages = with pkgs; [gnome-tour];
   };

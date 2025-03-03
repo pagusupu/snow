@@ -11,7 +11,7 @@
       username = "pagu";
       stateVersion = "24.11";
     };
-    extraSpecialArgs.inputs = inputs;
+    extraSpecialArgs = {inherit inputs;};
     useGlobalPkgs = true;
     useUserPackages = true;
   };
