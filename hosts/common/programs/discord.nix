@@ -46,6 +46,7 @@
           plainFolderIcon.enable = true;
           stickerPaste.enable = true;
           voiceChatDoubleClick.enable = true;
+          webRichPresence.enable = true;
           webScreenShareFixes.enable = true;
           youtubeAdblock.enable = true;
         };
@@ -53,6 +54,7 @@
       };
       extraConfig.SKIP_HOST_UPDATE = true;
     };
+    services.arrpc.enable = true;
     imports = [inputs.nixcord.homeManagerModules.nixcord];
   };
 }

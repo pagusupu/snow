@@ -10,7 +10,6 @@
     command-not-found.enable = false;
     nano.enable = false;
   };
-  boot.enableContainers = false;
 
   security = {
     sudo-rs = {

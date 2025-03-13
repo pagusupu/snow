@@ -22,6 +22,7 @@
       qbittorrent
       radeontop
       signal-desktop
+      wowup-cf
     ];
   };
 
@@ -31,11 +32,14 @@
     "jdks/8".source = lib.getBin pkgs.openjdk8;
   };
 
+  programs = {
+    honkers-railway-launcher.enable = true;
+    sleepy-launcher.enable = true;
+  };
   nix.settings = {
     substituters = ["https://ezkea.cachix.org"];
     trusted-public-keys = ["ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="];
   };
-  programs.honkers-railway-launcher.enable = true;
 
   services.pipewire.lowLatency = {
     enable = true;

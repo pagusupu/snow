@@ -24,6 +24,7 @@
       obsidian
       kdePackages.okular
       resources
+      standardnotes
     ];
     services.trayscale.enable = true;
   };
