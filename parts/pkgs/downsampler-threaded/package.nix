@@ -16,8 +16,8 @@ in
       hash = "sha256-aWLG0KY8LS1tia862rQjiu1Ck0BhF1P63D2H7uUSdnk=";
     };
 
-    buildInputs = [ pkgs.bashInteractive ];
-    nativeBuildInputs = [ pkgs.makeWrapper ];
+    buildInputs = [pkgs.bashInteractive];
+    nativeBuildInputs = [pkgs.makeWrapper];
 
     dontBuild = true;
     dontConfigure = true;

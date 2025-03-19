@@ -21,15 +21,15 @@
     execWheelOnly = true;
   };
 
-  imports = [ inputs.agenix.nixosModules.default ];
-  age.identityPaths = [ "/etc/ssh/${config.networking.hostName}_ed25519_key" ];
+  imports = [inputs.agenix.nixosModules.default];
+  age.identityPaths = ["/etc/ssh/${config.networking.hostName}_ed25519_key"];
 
   time.timeZone = "NZ";
   i18n.defaultLocale = "en_NZ.UTF-8";
 
   users.users.pagu = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = ["wheel"];
     uid = 1000;
   };
 }

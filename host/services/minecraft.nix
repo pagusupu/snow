@@ -1,5 +1,6 @@
 _: {
-  virtualisation.oci-containers.containers."minecraft" = {
+  /*
+     virtualisation.oci-containers.containers."minecraft" = {
     image = "itzg/minecraft-server:stable";
     ports = [
       "25565:25565"
@@ -30,4 +31,5 @@ _: {
       "${mc}/modpacks:/modpacks:ro"
     ];
   };
+  */
 }
