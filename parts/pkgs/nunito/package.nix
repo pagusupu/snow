@@ -8,8 +8,8 @@ in
     src = pkgs.fetchFromGitHub {
       owner = "googlefonts";
       repo = pname;
-      rev = "43d16f963c5c341c10efa0bfe7a82aa1bea8a938";
-      hash = "sha256-yZ+pPLcgyWRa8i3cn1SwJUskBzUl1na2mndhok1mMok=";
+      rev = "8c6a9bb9732545b9ed53f29ec5e1ab0ff53c4e6f";
+      hash = "sha256-m276Gnkwpd+MjHo4mPU1RBcTs34puao7Wi+OOEuTuI0=";
     };
 
     dontBuild = true;

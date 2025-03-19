@@ -37,6 +37,7 @@
           fixImagesQuality.enable = true;
           fixSpotifyEmbeds.enable = true;
           fixYoutubeEmbeds.enable = true;
+          gameActivityToggle.enable = true;
           loadingQuotes.enable = true;
           noF1.enable = true;
           noMosaic.enable = true;
