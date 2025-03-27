@@ -7,8 +7,13 @@
     gtk = {
       enable = true;
       theme = {
-        name = "Adwaita-dark";
-        package = pkgs.gnome-themes-extra;
+        name = "Graphite-Dark";
+        package = pkgs.graphite-gtk-theme.override {
+          colorVariants = ["dark"];
+          themeVariants = ["default"];
+          tweaks = ["normal" "black" "rimless"];
+          withGrub = true;
+        };
       };
       iconTheme = {
         name = "MoreWaita";
@@ -22,7 +27,15 @@
     };
     home.pointerCursor = {
       name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
+      package = pkgs.bibata-cursors.overrideAttrs {
+        buildPhase = ''
+          runHook preBuild
+
+          ctgen configs/normal/x.build.toml -p x11 -d $bitmaps/Bibata-Modern-Classic -n 'Bibata-Modern-Classic'
+
+          runHook postBuild
+        '';
+      };
       size = 20;
       gtk.enable = true;
       x11.enable = true;

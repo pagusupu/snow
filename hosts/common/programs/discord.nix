@@ -40,19 +40,29 @@
           gameActivityToggle.enable = true;
           loadingQuotes.enable = true;
           noF1.enable = true;
-          noMosaic.enable = true;
           noOnboardingDelay.enable = true;
           noProfileThemes.enable = true;
           onePingPerDM.enable = true;
-          plainFolderIcon.enable = true;
+          #plainFolderIcon.enable = true;
           stickerPaste.enable = true;
           voiceChatDoubleClick.enable = true;
           webRichPresence.enable = true;
           webScreenShareFixes.enable = true;
           youtubeAdblock.enable = true;
         };
-        themeLinks = ["https://raw.githubusercontent.com/pagusupu/midnight-discord/refs/heads/master/midnight.theme.css"];
+        themeLinks = ["https://refact0r.github.io/midnight-discord/build/midnight.css"];
       };
+      quickCss =
+        # css
+        ''
+          :root{
+              --colors: off;
+          }
+
+          body {
+              --font: ' ';
+          }
+        '';
       extraConfig.SKIP_HOST_UPDATE = true;
     };
     services.arrpc.enable = true;

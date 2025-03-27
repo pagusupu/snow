@@ -33,4 +33,15 @@
     systemPackages = [pkgs.adwsteamgtk];
   };
   imports = [inputs.nix-gaming.nixosModules.platformOptimizations];
+
+  # warframe
+  networking.firewall = {
+    allowedTCPPortRanges = [
+      {
+        from = 6695;
+        to = 6699;
+      }
+    ];
+    allowedUDPPorts = [4950 4955];
+  };
 }

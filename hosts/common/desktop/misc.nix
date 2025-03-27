@@ -29,7 +29,6 @@
 
           "fish"
           "mpv"
-          "nvim"
           "yazi"
         ] (n: {
           name = n;

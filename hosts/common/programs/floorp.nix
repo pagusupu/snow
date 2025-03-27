@@ -15,23 +15,25 @@
           sponsorblock
           ublock-origin
         ];
-        search = {
-          default = "Startpage";
+        /*
+           search = {
+          default = "st";
           order = [
-            "Startpage"
-            "Google"
+            "st"
+            "google"
           ];
           engines = {
             "Warframe Wiki" = {
               urls = [{template = "https://wiki.warframe.com/?search={searchTerms}";}];
               definedAliases = ["@wf"];
             };
-            "Bing".metaData.hidden = true;
-            "DuckDuckGo".metaData.hidden = true;
-            "You.com".metaData.hidden = true;
+            "bing".metaData.hidden = true;
+            "ddg".metaData.hidden = true;
+            "yc".metaData.hidden = true;
           };
           force = true;
         };
+        */
         settings = {
           "browser.aboutConfig.showWarning" = false;
           "browser.EULA.override" = true;
