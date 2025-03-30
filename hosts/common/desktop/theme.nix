@@ -12,7 +12,6 @@
           colorVariants = ["dark"];
           themeVariants = ["default"];
           tweaks = ["normal" "black" "rimless"];
-          withGrub = true;
         };
       };
       iconTheme = {

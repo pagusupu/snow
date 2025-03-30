@@ -51,18 +51,9 @@
           youtubeAdblock.enable = true;
         };
         themeLinks = ["https://refact0r.github.io/midnight-discord/build/midnight.css"];
+        useQuickCss = true;
       };
-      quickCss =
-        # css
-        ''
-          :root{
-              --colors: off;
-          }
-
-          body {
-              --font: ' ';
-          }
-        '';
+      quickCss = ":root { --colors: off; } body { --font: ''; }";
       extraConfig.SKIP_HOST_UPDATE = true;
     };
     services.arrpc.enable = true;
