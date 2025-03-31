@@ -10,16 +10,20 @@
   };
 
   home-manager.users.pagu = {
-    home.packages = with pkgs; [
-      cartridges
-      heroic
-      prismlauncher
-      qbittorrent
-      radeontop
-      signal-desktop
-      wowup-cf
-      inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
-    ];
+    home.packages = with pkgs;
+      [
+        cartridges
+        heroic
+        prismlauncher
+        qbittorrent
+        radeontop
+        signal-desktop
+        wowup-cf
+      ]
+      ++ (with inputs; [
+        balatro-mod-manager.packages.${pkgs.system}.default
+        nix-gaming.packages.${pkgs.system}.osu-lazer-bin
+      ]);
   };
 
   environment.etc = {
