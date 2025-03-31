@@ -18,12 +18,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hosts = {
-      url = "github:StevenBlack/hosts/5c72f8f22e58e1c74f34ea5b8a019ab7b33aaa72";
-      inputs.nixpkgs.follows = "unstable";
-    };
 
     balatro-mod-manager.url = "github:skyline69/balatro-mod-manager/66-linux-support";
+    hosts.url = "github:StevenBlack/hosts";
     nixcord.url = "github:kaylorben/nixcord";
     nix-gaming.url = "github:fufexan/nix-gaming";
     paguvim.url = "github:pagusupu/paguvim";
