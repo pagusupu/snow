@@ -41,10 +41,10 @@ _: {
                     {
                       title = "Frequent";
                       links = [
-                        (bookmark "Discord" "https://discord.com/channels/@me")
-                        (bookmark "Feishin" "http://192.168.178.182:9180")
-                        (bookmark "Linkding" "http://192.168.178.182:9090")
+                        (bookmark "Shiori" "http://aoi:8444")
                         (bookmark "Notes" "https://app.standardnotes.com")
+                        (bookmark "GitHub" "https://github.com")
+                        (bookmark "Komga" "https://192.168.178.182:8097")
                         (bookmark "Youtube" "https://youtube.com/feed/subscriptions")
                         (bookmark "YT Music" "https://music.youtube.com")
                       ];
@@ -55,8 +55,8 @@ _: {
                         (bookmark "Nix Search" "https://search.nixos.org/packages?channel=unstable")
                         (bookmark "HM Search" "https://home-manager-options.extranix.com/?query=&release=master")
                         (bookmark "Tailscale" "https://login.tailscale.com/admin/machines")
-                        (bookmark "GitHub" "https://github.com")
-                        (bookmark "Gmail" "https://mail.google.com/mail/u/0/")
+                        (bookmark "Cloudflare" "https://dash.cloudflare.com")
+                        (bookmark "Gmail" "https://mail.google.com/mail/u/0")
                         (bookmark "Proton Mail" "https://mail.proton.me/u/0/inbox")
                       ];
                     }
@@ -92,7 +92,7 @@ _: {
       ];
       theme = {
         light = false;
-        background-color = "0 0 14";
+        background-color = "0 0 12";
         primary-color = "331 58 61";
         positive-color = "133 76 75";
         negative-color = "9 100 69";

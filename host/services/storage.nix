@@ -22,18 +22,17 @@ lib.mkMerge [
     };
   })
   (let
-    port = 9090;
+    port = 8444;
   in {
-    virtualisation.oci-containers.containers."linkding" = {
-      image = "sissbruecker/linkding:latest";
-      ports = ["${builtins.toString port}:9090"];
-      volumes = ["/storage/linkding/:/etc/linkding/data"];
-      environment = {
-        LD_SUPERUSER_NAME = "pagu";
-        LD_SUPERUSER_PASSWORD = "changeme"; # initial only
+    services = {
+      shiori = {
+        enable = true;
+        inherit port;
+        environmentFile = config.age.secrets.shiori.path;
       };
+      nginx = nginxlib.host "shio" port "" "";
     };
-    services.nginx = nginxlib.host "link" port "" "";
+    age.secrets.shiori.file = ../../parts/secrets/shiori.age;
   })
   (let
     port = 9000;

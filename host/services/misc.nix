@@ -1,11 +1,10 @@
 {
   config,
-  lib,
+  inputs,
   ...
-}:
-lib.mkMerge [
-  {
-    services.home-assistant = {
+}: {
+  services = {
+    home-assistant = {
       enable = true;
       openFirewall = true;
       config = {
@@ -23,9 +22,7 @@ lib.mkMerge [
         "wiz"
       ];
     };
-  }
-  {
-    services.tailscale = {
+    tailscale = {
       enable = true;
       openFirewall = true;
       authKeyFile = config.age.secrets.tailscale.path;
@@ -37,6 +34,18 @@ lib.mkMerge [
         "--ssh"
       ];
     };
-    age.secrets.tailscale.file = ../../parts/secrets/tailscale.age;
-  }
-]
+  };
+  age.secrets.tailscale.file = ../../parts/secrets/tailscale.age;
+
+  home-manager = {
+    users.pagu.home = {
+      homeDirectory = "/home/pagu";
+      username = "pagu";
+      stateVersion = "23.05";
+    };
+    extraSpecialArgs = {inherit inputs;};
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
+  imports = [inputs.home-manager.nixosModules.home-manager];
+}
