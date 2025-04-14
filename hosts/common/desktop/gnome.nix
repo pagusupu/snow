@@ -15,6 +15,7 @@
         gnome-tweaks
         loupe
         nautilus
+        papers
         seahorse
         sushi
       ]
@@ -43,6 +44,7 @@
       };
       verbose = true;
     };
+    kernelParams = ["quiet" "splash"];
     plymouth.enable = true;
   };
 }

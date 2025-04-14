@@ -16,13 +16,9 @@
       mpv.enable = true;
     };
     home.packages = with pkgs; [
-      bitwarden-desktop
       celluloid
       feishin
-      impression
       libreoffice-qt-fresh
-      obsidian
-      kdePackages.okular
       resources
       standardnotes
     ];

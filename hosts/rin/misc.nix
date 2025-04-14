@@ -17,8 +17,7 @@
         prismlauncher
         qbittorrent
         radeontop
-        signal-desktop
-        wowup-cf
+        torzu
       ]
       ++ (with inputs; [
         balatro-mod-manager.packages.${pkgs.system}.default

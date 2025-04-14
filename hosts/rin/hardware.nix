@@ -7,9 +7,10 @@
         device = "nodev";
         efiSupport = true;
         useOSProber = true;
+        theme = pkgs.minimal-grub-theme;
       };
       efi.canTouchEfiVariables = true;
-      timeout = 0;
+      timeout = 1;
     };
 
     initrd.supportedFilesystems.btrfs = true;

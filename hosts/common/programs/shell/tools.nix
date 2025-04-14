@@ -8,10 +8,11 @@
     programs = {
       bat = {
         enable = true;
-        config.theme = "ansi";
+        config.theme = "base16";
       };
       direnv = {
         enable = true;
+        silent = true;
         nix-direnv.enable = true;
       };
       eza = {
@@ -26,7 +27,14 @@
           sort_by = "natural";
           sort_dir_first = true;
         };
-        # installed via ya
+        plugins = {
+          inherit
+            (pkgs.yaziPlugins)
+            full-border
+            no-status
+            starship
+            ;
+        };
         initLua = ''
           require("full-border"):setup()
           require("no-status"):setup()
@@ -46,6 +54,6 @@
   };
   environment = {
     binsh = lib.getExe pkgs.dash;
-    sessionVariables.DIRENV_LOG_FORMAT = "";
+    sessionVariables.EDITOR = "nvim";
   };
 }
