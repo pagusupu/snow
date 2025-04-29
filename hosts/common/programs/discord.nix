@@ -57,6 +57,6 @@
       extraConfig.SKIP_HOST_UPDATE = true;
     };
     services.arrpc.enable = true;
-    imports = [inputs.nixcord.homeManagerModules.nixcord];
+    imports = [inputs.nixcord.homeModules.nixcord];
   };
 }

@@ -18,9 +18,7 @@
     home.packages = with pkgs; [
       celluloid
       feishin
-      libreoffice-qt-fresh
       resources
-      standardnotes
     ];
     services.trayscale.enable = true;
   };

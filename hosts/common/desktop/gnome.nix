@@ -12,10 +12,12 @@
     systemPackages = with pkgs;
       [
         gnome-calculator
+        gnome-calendar
         gnome-tweaks
         loupe
         nautilus
         papers
+        pinta
         seahorse
         sushi
       ]
