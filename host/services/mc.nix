@@ -1,11 +1,11 @@
 _: {
-  /*
   virtualisation = {
     oci-containers.containers."minecraft" = {
       image = "itzg/minecraft-server:stable";
+      autoStart = false;
       ports = [
         "25565:25565"
-        "24454:24454/udp" # vc mod
+        # "24454:24454/udp" # vc mod
       ];
       environment = {
         EULA = "true";
@@ -13,10 +13,19 @@ _: {
         DIFFICULTY = "hard";
         ENABLE_WHITELIST = "true";
 
+        /*
         VERSION = "1.21.1";
         TYPE = "MODRINTH";
         MODRINTH_MODPACK = "/modpacks/pagupack.mrpack";
         RCON_COMMANDS_STARTUP = "/gamerule playersSleepingPercentage 20";
+        */
+
+        /*
+        VERSION = "1.20.1";
+        TYPE = "MODRINTH";
+        MODRINTH_MODPACK = "prominence-2-fabric";
+        LEVEL = "prominence";
+        */
 
         INIT_MEMORY = "8G";
         MAX_MEMORY = "12G";
@@ -28,7 +37,8 @@ _: {
       volumes = let
         mc = "/home/pagu/minecraft";
       in [
-        "${mc}/servers/pagupack:/data"
+        # "${mc}/servers/pagupack:/data"
+        # "${mc}/servers/prominence:/data"
         "${mc}/modpacks:/modpacks:ro"
       ];
     };
@@ -38,5 +48,4 @@ _: {
     };
     oci-containers.backend = "docker";
   };
-  */
 }

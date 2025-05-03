@@ -26,6 +26,7 @@
         EnableMediaFileCoverArt = false;
         EnableSharing = true;
         EnableStarRating = false;
+        EnableTranscodingConfig = true;
         IgnoredArticles = "";
         SessionTimeout = "96h";
         ShareURL = "https://navi.${config.networking.domain}";

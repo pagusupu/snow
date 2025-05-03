@@ -41,23 +41,23 @@ _: {
                     {
                       title = "Frequent";
                       links = [
-                        (bookmark "Shiori" "http://aoi:8444")
-                        (bookmark "Notes" "https://app.standardnotes.com")
-                        (bookmark "GitHub" "https://github.com")
-                        (bookmark "Komga" "https://192.168.178.182:8097")
+                        (bookmark "Gmail" "https://mail.google.com/mail/u/0")
+                        (bookmark "Drive" "https://drive.google.com/drive/u/0/home")
+                        (bookmark "Shiori" "https://shio.pagu.cafe")
+                        (bookmark "Mealie" "https://meal.pagu.cafe/g/home")
                         (bookmark "Youtube" "https://youtube.com/feed/subscriptions")
                         (bookmark "YT Music" "https://music.youtube.com")
                       ];
                     }
                     {
-                      title = "Misc";
+                      title = "Stuff";
                       links = [
                         (bookmark "Nix Search" "https://search.nixos.org/packages?channel=unstable")
                         (bookmark "HM Search" "https://home-manager-options.extranix.com/?query=&release=master")
+                        (bookmark "GitHub" "https://github.com")
                         (bookmark "Tailscale" "https://login.tailscale.com/admin/machines")
                         (bookmark "Cloudflare" "https://dash.cloudflare.com")
-                        (bookmark "Gmail" "https://mail.google.com/mail/u/0")
-                        (bookmark "Proton Mail" "https://mail.proton.me/u/0/inbox")
+                        (bookmark "Placeholder" "http://192.168.178.182:8333")
                       ];
                     }
                   ];
@@ -93,9 +93,9 @@ _: {
       theme = {
         light = false;
         background-color = "0 0 12";
-        primary-color = "331 58 61";
-        positive-color = "133 76 75";
-        negative-color = "9 100 69";
+        primary-color = "300 17 61";
+        positive-color = "122 17 61";
+        negative-color = "356 17 61";
       };
       branding.hide-footer = true;
     };
