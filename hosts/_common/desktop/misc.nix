@@ -20,13 +20,6 @@
       enable = true;
       desktopEntries =
         lib.genAttrs [
-          "base"
-          "calc"
-          "draw"
-          "impress"
-          "math"
-          "writer"
-
           "fish"
           "mpv"
           "yazi"

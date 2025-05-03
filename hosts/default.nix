@@ -10,7 +10,7 @@
           modules = builtins.concatMap (x:
             builtins.filter (lib.hasSuffix ".nix")
             (map toString (lib.filesystem.listFilesRecursive x)))
-          [./${name} ./common];
+          [./${name} ./_common];
           specialArgs = {inherit inputs;};
           system = "x86_64-linux";
         }
