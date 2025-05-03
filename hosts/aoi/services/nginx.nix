@@ -10,7 +10,7 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
   };
-  networking.firewall.allowedTCPPorts = [80 443 1313];
+  networking.firewall.allowedTCPPorts = [80 443];
 
   security.acme = {
     acceptTerms = true;
@@ -24,16 +24,16 @@
       enableACME = true;
       forceSSL = true;
     };
-    host = subdomain: port: websocket: extraConfig: {
+    host = subdomain: port: proxyWebsockets: extraConfig: {
       virtualHosts."${subdomain}.${config.networking.domain}" =
         {
           locations."/" = {
             proxyPass = "http://localhost:${builtins.toString port}";
-            proxyWebsockets =
-              if (websocket == "true")
-              then true
-              else false;
-            inherit extraConfig;
+            inherit proxyWebsockets;
+            extraConfig =
+              if extraConfig == null
+              then ""
+              else extraConfig;
           };
         }
         // SSL;

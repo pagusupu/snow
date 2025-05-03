@@ -33,7 +33,7 @@
         UIWelcomeMessage = "";
       };
     };
-    nginx = nginxlib.host "navi" port "true" "";
+    nginx = nginxlib.host "navi" port true null;
   };
   environment.systemPackages = with pkgs; [
     downsampler-threaded

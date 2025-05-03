@@ -1,17 +1,7 @@
-{inputs, ...}: {
-  imports = [inputs.hosts.nixosModule];
+_: {
   networking = {
-    domain = "pagu.cafe";
     hostName = "aoi";
     hostId = "a3b49b22";
-    stevenBlackHosts = {
-      enable = true;
-      blockFakenews = true;
-      blockGambling = true;
-    };
-    enableIPv6 = false;
-    nameservers = ["1.0.0.1" "1.1.1.1"];
-    useDHCP = false;
   };
   systemd.network = let
     name = "enp37s0";

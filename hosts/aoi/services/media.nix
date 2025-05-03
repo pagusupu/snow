@@ -7,7 +7,7 @@
 lib.mkMerge [
   {
     age.secrets.freshrss = {
-      file = ../../parts/secrets/freshrss.age;
+      file = ../../../parts/secrets/freshrss.age;
       owner = "freshrss";
     };
     services = let
@@ -32,7 +32,7 @@ lib.mkMerge [
         enable = true;
         openFirewall = true;
       };
-      nginx = nginxlib.host "jlly" port "true" "proxy_buffering off;";
+      nginx = nginxlib.host "jlly" port true "proxy_buffering off;";
     };
   })
   (let
@@ -44,7 +44,7 @@ lib.mkMerge [
         inherit port;
         openFirewall = true;
       };
-      nginx = nginxlib.host "kmga" port "" "";
+      nginx = nginxlib.host "kmga" port false null;
     };
   })
 ]

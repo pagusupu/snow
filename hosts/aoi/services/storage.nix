@@ -18,7 +18,7 @@ lib.mkMerge [
         environment.TZ = "NZ";
         machine-learning.enable = false;
       };
-      nginx = nginxlib.host "pics" port "true" "client_max_body_size 50000M;";
+      nginx = nginxlib.host "pics" port true "client_max_body_size 50000M;";
     };
   })
   (let
@@ -34,7 +34,7 @@ lib.mkMerge [
         };
         inherit port;
       };
-      nginx = nginxlib.host "meal" port "" "";
+      nginx = nginxlib.host "meal" port false null;
     };
     fileSystems."/var/lib/private/mealie" = {
       device = "/storage/mealie";
@@ -50,9 +50,9 @@ lib.mkMerge [
         inherit port;
         environmentFile = config.age.secrets.shiori.path;
       };
-      nginx = nginxlib.host "shio" port "" "";
+      nginx = nginxlib.host "shio" port false null;
     };
-    age.secrets.shiori.file = ../../parts/secrets/shiori.age;
+    age.secrets.shiori.file = ../../../parts/secrets/shiori.age;
   })
   (let
     port = 8222;
@@ -67,7 +67,7 @@ lib.mkMerge [
         };
         backupDir = "/storage/vaultwarden";
       };
-      nginx = nginxlib.host "wrdn" port "" "proxy_pass_header Authorization;";
+      nginx = nginxlib.host "wrdn" port false "proxy_pass_header Authorization;";
     };
   })
 ]

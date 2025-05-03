@@ -62,6 +62,6 @@
         };
       };
     };
-    nginx = nginxlib.host "qbit" port "" "";
+    nginx = nginxlib.host "qbit" port false null;
   };
 }

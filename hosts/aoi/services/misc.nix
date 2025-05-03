@@ -35,7 +35,7 @@
       ];
     };
   };
-  age.secrets.tailscale.file = ../../parts/secrets/tailscale.age;
+  age.secrets.tailscale.file = ../../../parts/secrets/tailscale.age;
 
   home-manager = {
     users.pagu.home = {
