@@ -12,6 +12,7 @@
           darkreader
           return-youtube-dislikes
           sponsorblock
+          stylus
           ublock-origin
         ];
         settings = {

@@ -7,12 +7,8 @@
     gtk = {
       enable = true;
       theme = {
-        name = "Graphite-Dark";
-        package = pkgs.graphite-gtk-theme.override {
-          colorVariants = ["dark"];
-          themeVariants = ["default"];
-          tweaks = ["normal" "darker" "rimless"];
-        };
+        name = "rose-pine";
+        package = pkgs.rose-pine-gtk-theme;
       };
       iconTheme = {
         name = "MoreWaita";
@@ -27,22 +23,20 @@
     home = {
       packages = let
         shell = pkgs.marble-shell-theme.override {
-          colors = ["gray"];
-          additionalInstallationTweaks = ["-O" "-Pnp" "--mode=dark"];
+          colors = ["purple"];
+          additionalInstallationTweaks = [
+            "--mode=dark"
+            #"--floating-panel"
+          ];
         };
       in [
         shell
+        pkgs.gdm-settings
       ];
       pointerCursor = {
-        name = "Bibata-Modern-Classic";
-        package = pkgs.bibata-cursors.overrideAttrs {
-          buildPhase = ''
-            runHook preBuild
-            ctgen configs/normal/x.build.toml -p x11 -d $bitmaps/Bibata-Modern-Classic -n 'Bibata-Modern-Classic'
-            runHook postBuild
-          '';
-        };
-        size = 20;
+        name = "BreezeX-RosePine-Linux";
+        package = pkgs.rose-pine-cursor;
+        size = 24;
         gtk.enable = true;
         x11.enable = true;
       };

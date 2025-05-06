@@ -32,14 +32,15 @@
         ];
       shellInit = ''
         set -u fish_greeting
-
-        set fish_color_valid_path yellow
-        set fish_color_autosuggestion brblack
-        set fish_color_param blue
-        set fish_color_option green
-        set fish_color_command magenta
-        set fish_color_error red
+        fish_config theme choose "rose-pine"
       '';
+    };
+    home.file."fish-rose-pine" = {
+      source = pkgs.fetchurl {
+        url = "https://github.com/rose-pine/fish/raw/refs/heads/main/themes/Ros%C3%A9%20Pine.theme";
+        hash = "sha256-aRk1M8a3za36l6MNiOlD3PwVZqtXiv6I+s3WacqPDhw=";
+      };
+      target = ".config/fish/themes/rose-pine.theme";
     };
   };
   programs.fish.enable = true;

@@ -11,8 +11,8 @@
       userSettings = {
         theme = {
           mode = "system";
-          dark = "One Dark";
-          light = "One Light";
+          dark = "Rosé Pine";
+          light = "Rosé Pine Dawn";
         };
         languages.Nix = {
           formatter.external.command = "nixfmt";

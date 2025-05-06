@@ -9,7 +9,7 @@
           cursor-style-blink = false;
           keybind = ["ctrl+shift+w=close_surface"];
           term = "xterm-256color";
-          theme = "mellow";
+          theme = "rose-pine";
         };
         enableFishIntegration = true;
       };

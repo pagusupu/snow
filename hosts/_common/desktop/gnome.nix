@@ -23,6 +23,7 @@
       ]
       ++ (with pkgs.gnomeExtensions; [
         appindicator
+        blur-my-shell
         fullscreen-avoider
         quick-settings-tweaker
       ]);
@@ -33,20 +34,22 @@
     xserver.excludePackages = [pkgs.xterm];
   };
 
+  boot.plymouth.enable = true;
+
   boot = {
     initrd = {
       systemd = {
         enable = true;
         services = {
-          "autovt@tty1".enable = false;
-          "getty@tty1".enable = false;
+          #"autovt@tty1".enable = false;
+          #"getty@tty1".enable = false;
           systemd-udev-settle.enable = false;
         };
         network.wait-online.enable = false;
       };
-      verbose = true;
+      verbose = false;
     };
     kernelParams = ["quiet" "splash"];
-    plymouth.enable = true;
+    #plymouth.enable = true;
   };
 }

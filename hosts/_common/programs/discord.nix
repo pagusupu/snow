@@ -43,17 +43,20 @@
           noOnboardingDelay.enable = true;
           noProfileThemes.enable = true;
           onePingPerDM.enable = true;
-          #plainFolderIcon.enable = true;
+          plainFolderIcon.enable = true;
           stickerPaste.enable = true;
           voiceChatDoubleClick.enable = true;
           webRichPresence.enable = true;
           webScreenShareFixes.enable = true;
           youtubeAdblock.enable = true;
         };
-        themeLinks = ["https://refact0r.github.io/midnight-discord/build/midnight.css"];
+        themeLinks = ["https://github.com/refact0r/midnight-discord/raw/refs/heads/master/themes/flavors/midnight-rose-pine.theme.css"];
         useQuickCss = true;
       };
-      quickCss = ":root { --colors: off; } body { --font: ''; }";
+      quickCss = ''
+        @import url("https://croissantdunord.github.io/discord-adblock/adblock.css");
+        body { --font: ""; }
+      '';
       extraConfig.SKIP_HOST_UPDATE = true;
     };
     services.arrpc.enable = true;
