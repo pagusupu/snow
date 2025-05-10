@@ -18,6 +18,7 @@
     home.packages = with pkgs; [
       celluloid
       feishin
+      radeontop
       resources
     ];
     services.trayscale.enable = true;

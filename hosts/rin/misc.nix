@@ -16,13 +16,13 @@
         heroic
         prismlauncher
         qbittorrent
-        radeontop
         torzu
       ]
       ++ (with inputs; [
         balatro-mod-manager.packages.${pkgs.system}.default
         nix-gaming.packages.${pkgs.system}.osu-lazer-bin
       ]);
+    programs.obs-studio.enable = true;
   };
 
   environment.etc = {

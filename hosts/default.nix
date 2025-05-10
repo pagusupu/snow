@@ -1,12 +1,9 @@
-{
-  inputs,
-  lib,
-  ...
-}: let
+{inputs, ...}: let
+  inherit (inputs.nixpkgs) lib;
   mkHost = hosts:
     lib.genAttrs hosts (
       name:
-        inputs.nixpkgs.lib.nixosSystem {
+        lib.nixosSystem {
           modules = builtins.concatMap (x:
             builtins.filter (lib.hasSuffix ".nix")
             (map toString (lib.filesystem.listFilesRecursive x)))
