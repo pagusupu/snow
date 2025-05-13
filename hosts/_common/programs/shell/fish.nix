@@ -38,7 +38,7 @@
     home.file."fish-rose-pine" = {
       source = pkgs.fetchurl {
         url = "https://github.com/rose-pine/fish/raw/refs/heads/main/themes/Ros%C3%A9%20Pine.theme";
-        hash = "sha256-aRk1M8a3za36l6MNiOlD3PwVZqtXiv6I+s3WacqPDhw=";
+        hash = "sha256-dpAIN45Nw18mbdomNIUqjlXCDf907xmtwarkKM4323M=";
       };
       target = ".config/fish/themes/rose-pine.theme";
     };

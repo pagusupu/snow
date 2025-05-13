@@ -12,6 +12,7 @@
     initrd.supportedFilesystems.btrfs = true;
     supportedFilesystems.ntfs = true;
 
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = ["amdgpu" "kvm-amd"];
     initrd.availableKernelModules = ["nvme" "sd_mod" "sdhci_pci" "usb_storage" "xhci_pci"];
   };
