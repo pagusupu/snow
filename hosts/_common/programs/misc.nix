@@ -23,7 +23,10 @@
     ];
     services.trayscale.enable = true;
   };
-  programs.localsend.enable = true;
+  programs = {
+    goldwarden.enable = true;
+    localsend.enable = true;
+  };
 
   # feishin
   nixpkgs.config.permittedInsecurePackages = ["electron-33.4.11"];

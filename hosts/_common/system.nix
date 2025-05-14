@@ -30,6 +30,15 @@
   };
   i18n.defaultLocale = "en_NZ.UTF-8";
 
+  boot.initrd = {
+    systemd = {
+      enable = true;
+      services.systemd-udev-settle.enable = false;
+      network.wait-online.enable = false;
+    };
+    verbose = false;
+  };
+
   imports = [inputs.hosts.nixosModule];
   networking = {
     stevenBlackHosts = {

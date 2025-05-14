@@ -13,5 +13,8 @@
         }
     );
 in {
-  flake.nixosConfigurations = mkHost ["rin" "ryo"];
+  flake.nixosConfigurations = mkHost [
+    "rin"
+    # "ryo"
+  ];
 }
