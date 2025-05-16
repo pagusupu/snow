@@ -19,15 +19,29 @@
         icons = "auto";
         extraOptions = ["--group-directories-first"];
       };
-      yazi = {
+      yazi = let
+        unstable = inputs.unstable.legacyPackages.${pkgs.system};
+      in {
         enable = true;
-        package = inputs.unstable.legacyPackages.${pkgs.system}.yazi;
+        package = unstable.yazi;
         settings.manager = {
           show_hidden = true;
           sort_by = "natural";
           sort_dir_first = true;
         };
-        # installed via ya
+
+        /*
+           plugins = {
+          inherit
+            (unstable.yaziPlugins)
+            full-border
+            no-status
+            starship
+            ;
+        };
+        */
+
+        # installed via ya until hm module updates
         initLua = ''
           require("full-border"):setup()
           require("no-status"):setup()
