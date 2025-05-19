@@ -24,7 +24,7 @@ _: {
                     (zone "Australia/Sydney" "Sydney")
                   ];
                 }
-                {type = "calendar";}
+                {type = "calendar-legacy";}
               ];
               size = "small";
             }

@@ -41,7 +41,7 @@ lib.mkMerge [
     services = {
       komga = {
         enable = true;
-        inherit port;
+        settings = {inherit port;};
         openFirewall = true;
       };
       nginx = nginxlib.host "kmga" port false null;

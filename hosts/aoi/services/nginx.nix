@@ -31,9 +31,9 @@
             proxyPass = "http://localhost:${builtins.toString port}";
             inherit proxyWebsockets;
             extraConfig =
-              if extraConfig == null
-              then ""
-              else extraConfig;
+              if extraConfig != null
+              then extraConfig
+              else "";
           };
         }
         // SSL;

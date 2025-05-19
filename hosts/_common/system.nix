@@ -22,11 +22,6 @@
   };
   boot.enableContainers = false;
 
-  security.sudo-rs = {
-    enable = true;
-    execWheelOnly = true;
-  };
-
   networking = {
     domain = "pagu.cafe";
     stevenBlackHosts = {

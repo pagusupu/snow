@@ -8,10 +8,11 @@
     programs = {
       bat = {
         enable = true;
-        config.theme = "ansi";
+        config.theme = "base16";
       };
       direnv = {
         enable = true;
+        silent = true;
         nix-direnv.enable = true;
       };
       eza = {
@@ -19,29 +20,21 @@
         icons = "auto";
         extraOptions = ["--group-directories-first"];
       };
-      yazi = let
-        unstable = inputs.unstable.legacyPackages.${pkgs.system};
-      in {
+      yazi = {
         enable = true;
-        package = unstable.yazi;
         settings.manager = {
           show_hidden = true;
           sort_by = "natural";
           sort_dir_first = true;
         };
-
-        /*
-           plugins = {
+        plugins = {
           inherit
-            (unstable.yaziPlugins)
+            (pkgs.yaziPlugins)
             full-border
             no-status
             starship
             ;
         };
-        */
-
-        # installed via ya until hm module updates
         initLua = ''
           require("full-border"):setup()
           require("no-status"):setup()
@@ -60,10 +53,7 @@
       wget
       inputs.paguvim.packages.${pkgs.system}.default
     ];
-    sessionVariables = {
-      DIRENV_LOG_FORMAT = "";
-      EDITOR = "nvim";
-    };
     binsh = lib.getExe pkgs.dash;
+    sessionVariables.EDITOR = "nvim";
   };
 }
