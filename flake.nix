@@ -7,7 +7,7 @@
 
   inputs = {
     nixpkgs.follows = "unstable";
-    stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     firefox-addons = {
@@ -19,7 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    balatro-mod-manager.url = "github:skyline69/balatro-mod-manager/66-linux-support";
     hosts.url = "github:StevenBlack/hosts";
     nixcord.url = "github:kaylorben/nixcord";
     nix-gaming.url = "github:fufexan/nix-gaming";

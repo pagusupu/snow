@@ -26,11 +26,12 @@
         blur-my-shell
         fullscreen-avoider
         quick-settings-tweaker
+        user-themes
       ]);
     gnome.excludePackages = with pkgs; [gnome-tour];
   };
   services = {
-    gnome.core-utilities.enable = false;
+    gnome.core-apps.enable = false;
     xserver.excludePackages = [pkgs.xterm];
   };
 
