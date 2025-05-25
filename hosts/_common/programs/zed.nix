@@ -3,7 +3,6 @@
     programs.zed-editor = {
       enable = true;
       extensions = [
-        "catppuccin"
         "git-firefly"
         "nix"
         "toml"

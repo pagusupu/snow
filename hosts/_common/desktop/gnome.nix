@@ -18,7 +18,9 @@
         nautilus
         papers
         pinta
+        resources
         seahorse
+        sticky-notes
         sushi
       ]
       ++ (with pkgs.gnomeExtensions; [
