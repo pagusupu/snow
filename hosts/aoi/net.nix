@@ -1,8 +1,4 @@
 _: {
-  networking = {
-    hostName = "aoi";
-    hostId = "a3b49b22";
-  };
   systemd.network = let
     name = "enp37s0";
   in {
