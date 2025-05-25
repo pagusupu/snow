@@ -12,6 +12,7 @@
   home-manager.users.pagu = {
     home.packages = with pkgs; [
       cartridges
+      downsampler-threaded
       heroic
       prismlauncher
       qbittorrent

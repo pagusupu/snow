@@ -2,10 +2,9 @@
   fonts = {
     packages = with pkgs; [
       lato
-      nunito
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
-      # compat
+
       dejavu_fonts
       noto-fonts
       noto-fonts-cjk-sans
@@ -17,7 +16,7 @@
       defaultFonts = {
         emoji = ["Noto Color Emoji"];
         monospace = ["JetBrainsMono Nerd Font"];
-        sansSerif = ["Nunito"];
+        sansSerif = ["Adwaita sans"];
         serif = ["Lato"];
       };
       subpixel.rgba = "rgb";
