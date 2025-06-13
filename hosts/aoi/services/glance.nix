@@ -41,10 +41,10 @@ _: {
                     {
                       title = "Frequent";
                       links = [
+                        (bookmark "Shiori" "https://shio.pagu.cafe")
                         (bookmark "Gmail" "https://mail.google.com/mail/u/0")
                         (bookmark "Drive" "https://drive.google.com/drive/u/0/home")
-                        (bookmark "Shiori" "https://shio.pagu.cafe")
-                        (bookmark "Mealie" "https://meal.pagu.cafe/g/home")
+                        (bookmark "Notes" "https://keep.google.com/u/0")
                         (bookmark "Youtube" "https://youtube.com/feed/subscriptions")
                         (bookmark "YT Music" "https://music.youtube.com")
                       ];

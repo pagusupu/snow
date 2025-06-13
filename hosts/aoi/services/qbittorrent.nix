@@ -31,8 +31,8 @@
 
           SlowTorrentsDownloadRate = 40;
           SlowTorrentsUploadRate = 40;
-          GlobalDLSpeedLimit = 4000;
-          GlobalUPSpeedLimit = 4000;
+          GlobalDLSpeedLimit = 4500;
+          GlobalUPSpeedLimit = 5000;
 
           MaxActiveCheckingTorrents = 2;
           MaxActiveDownloads = 3;
@@ -49,8 +49,8 @@
           WebUI = {
             AlternativeUIEnabled = true;
             RootFolder = "${pkgs.fetchzip {
-              url = "https://github.com/VueTorrent/VueTorrent/releases/download/v2.24.0/vuetorrent.zip";
-              hash = "sha256-OfWpdYJHkSbgPnGTCLTS1sE5tRMF9WayzIRtLfN1h10=";
+              url = "https://github.com/VueTorrent/VueTorrent/releases/download/v2.26.0/vuetorrent.zip";
+              hash = "sha256-EFVzsr/OZ/QMJ+NN3kDkmIk6FCCnqgK6DgsLWNonspU=";
             }}";
 
             Username = "pagu";

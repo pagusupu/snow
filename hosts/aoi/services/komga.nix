@@ -4,7 +4,7 @@ in {
   services = {
     komga = {
       enable = true;
-      settings = {inherit port;};
+      settings.server = {inherit port;};
       openFirewall = true;
     };
     nginx = nginxlib.host "kmga" port false null;
