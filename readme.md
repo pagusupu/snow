@@ -2,7 +2,7 @@
 
 ### unstable
 
-currently desktop and laptop
+currently only desktop
 
 ### stable
 
