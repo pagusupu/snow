@@ -6,13 +6,13 @@
   home-manager.users.pagu = {
     programs.floorp = {
       enable = true;
+      package = inputs.floorp.legacyPackages.${pkgs.system}.floorp;
       profiles.pagu = {
         extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           bitwarden
           darkreader
           return-youtube-dislikes
           sponsorblock
-          stylus
           ublock-origin
         ];
         settings = {

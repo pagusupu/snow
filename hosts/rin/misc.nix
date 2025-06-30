@@ -9,17 +9,16 @@
     hostId = "6f257938";
   };
 
-  home-manager.users.pagu = {
-    home.packages = with pkgs; [
-      cartridges
-      downsampler-threaded
-      heroic
-      prismlauncher
-      qbittorrent
-      ryubing
-    ];
-    programs.obs-studio.enable = true;
-  };
+  home-manager.users.pagu.home.packages = with pkgs; [
+    cartridges
+    downsampler-threaded
+    heroic
+    prismlauncher
+    qbittorrent
+    ryubing
+    vintagestory
+    inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
+  ];
 
   environment.etc = {
     "jdks/21".source = lib.getBin pkgs.openjdk21;
@@ -33,4 +32,11 @@
     rate = 48000;
   };
   imports = [inputs.nix-gaming.nixosModules.pipewireLowLatency];
+
+  nixpkgs.config.permittedInsecurePackages = ["dotnet-runtime-7.0.20"]; # vintage story
+
+  nix.settings = {
+    substituters = ["https://nix-gaming.cachix.org"];
+    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+  };
 }

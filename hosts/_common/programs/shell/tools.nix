@@ -22,14 +22,17 @@
       };
       zoxide.enable = true;
     };
-    home.packages = with pkgs; [
-      dust
-      nurl
-      ouch
-      rip2
-      wget
-      inputs.paguvim.packages.${pkgs.system}.default
-    ];
+    home.packages = let
+      ouch = pkgs.ouch.override {enableUnfree = true;};
+    in
+      with pkgs; [
+        dust
+        nurl
+        ouch
+        rip2
+        wget
+        inputs.paguvim.packages.${pkgs.system}.default
+      ];
   };
   environment = {
     binsh = lib.getExe pkgs.dash;

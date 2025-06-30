@@ -1,16 +1,17 @@
 {pkgs, ...}: {
   fonts = {
-    packages = with pkgs; [
-      lato
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.symbols-only
-
-      dejavu_fonts
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-      noto-fonts-extra
-    ];
+    packages = with pkgs;
+      [
+        lato
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-emoji
+        noto-fonts-extra
+      ]
+      ++ (with pkgs.nerd-fonts; [
+        jetbrains-mono
+        symbols-only
+      ]);
     fontconfig = {
       enable = true;
       defaultFonts = {

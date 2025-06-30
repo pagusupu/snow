@@ -50,7 +50,7 @@
           webScreenShareFixes.enable = true;
           youtubeAdblock.enable = true;
         };
-        themeLinks = ["https://github.com/refact0r/midnight-discord/raw/refs/heads/master/themes/flavors/midnight-rose-pine.theme.css"];
+        themeLinks = ["https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/themes/flavors/midnight-rose-pine.theme.css"];
         useQuickCss = true;
       };
       quickCss = ''

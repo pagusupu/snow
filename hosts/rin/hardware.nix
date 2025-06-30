@@ -26,7 +26,7 @@
   hardware = {
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [libvdpau-va-gl vaapiVdpau];
+      extraPackages = [pkgs.libvdpau-va-gl];
     };
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;

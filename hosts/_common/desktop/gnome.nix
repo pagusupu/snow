@@ -1,27 +1,24 @@
 {pkgs, ...}: {
   services = {
-    xserver = {
-      enable = true;
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
+    displayManager = {
+      defaultSession = "gnome";
+      gdm.enable = true;
     };
-    displayManager.defaultSession = "gnome";
+    desktopManager.gnome.enable = true;
   };
 
   environment = {
     systemPackages = with pkgs;
       [
+        celluloid
         gnome-calculator
         gnome-calendar
         gnome-tweaks
         loupe
         nautilus
         papers
-        pinta
         resources
-        seahorse
         sticky-notes
-        sushi
       ]
       ++ (with pkgs.gnomeExtensions; [
         appindicator
@@ -30,11 +27,21 @@
         quick-settings-tweaker
         user-themes
       ]);
-    gnome.excludePackages = with pkgs; [gnome-tour];
+    gnome.excludePackages = [pkgs.gnome-tour];
   };
   services = {
-    gnome.core-apps.enable = false;
-    xserver.excludePackages = [pkgs.xterm];
+    gnome = {
+      core-apps.enable = false;
+      sushi.enable = true;
+    };
+    avahi.nssmdns4 = true;
+  };
+
+  hardware.bluetooth.settings.General = {
+    Enable = "Source,Sink,Media,Socket";
+    Experimental = true;
+    KernelExperimental = true;
+    JustWorksRepairing = "always";
   };
 
   boot = {
