@@ -31,7 +31,6 @@
         };
       in [
         shell
-        pkgs.gdm-settings
       ];
       pointerCursor = {
         name = "BreezeX-RosePine-Linux";

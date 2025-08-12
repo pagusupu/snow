@@ -24,9 +24,6 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     paguvim.url = "github:pagusupu/paguvim";
 
-    # 11.28 crashes, commit is for 11.27
-    floorp.url = "github:nixos/nixpkgs/e6f23dc08d3624daab7094b701aa3954923c6bbb";
-
     # parts
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";

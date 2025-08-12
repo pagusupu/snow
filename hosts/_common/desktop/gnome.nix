@@ -19,12 +19,14 @@
         papers
         resources
         sticky-notes
+        switcheroo
       ]
       ++ (with pkgs.gnomeExtensions; [
         appindicator
         blur-my-shell
         fullscreen-avoider
         quick-settings-tweaker
+        removable-drive-menu
         user-themes
       ]);
     gnome.excludePackages = [pkgs.gnome-tour];

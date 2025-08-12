@@ -9,16 +9,20 @@
     hostId = "6f257938";
   };
 
-  home-manager.users.pagu.home.packages = with pkgs; [
-    cartridges
-    downsampler-threaded
-    heroic
-    prismlauncher
-    qbittorrent
-    ryubing
-    vintagestory
-    inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
-  ];
+  home-manager.users.pagu.home.packages = let
+    bottles = pkgs.bottles.override {removeWarningPopup = true;};
+  in
+    with pkgs; [
+      bottles
+      cartridges
+      downsampler-threaded
+      heroic
+      prismlauncher
+      qbittorrent
+      ryubing
+      wowup-cf
+      inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
+    ];
 
   environment.etc = {
     "jdks/21".source = lib.getBin pkgs.openjdk21;
@@ -32,8 +36,6 @@
     rate = 48000;
   };
   imports = [inputs.nix-gaming.nixosModules.pipewireLowLatency];
-
-  nixpkgs.config.permittedInsecurePackages = ["dotnet-runtime-7.0.20"]; # vintage story
 
   nix.settings = {
     substituters = ["https://nix-gaming.cachix.org"];
