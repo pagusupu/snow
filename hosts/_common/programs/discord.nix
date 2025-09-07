@@ -34,6 +34,7 @@
           disableCallIdle.enable = true;
           favoriteEmojiFirst.enable = true;
           favoriteGifSearch.enable = true;
+          fakeNitro.enable = true;
           fixImagesQuality.enable = true;
           fixSpotifyEmbeds.enable = true;
           fixYoutubeEmbeds.enable = true;
@@ -45,6 +46,7 @@
           onePingPerDM.enable = true;
           plainFolderIcon.enable = true;
           stickerPaste.enable = true;
+          userMessagesPronouns.enable = true;
           voiceChatDoubleClick.enable = true;
           webRichPresence.enable = true;
           webScreenShareFixes.enable = true;

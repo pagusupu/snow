@@ -17,6 +17,7 @@
         settings = {
           "browser.aboutConfig.showWarning" = false;
           "browser.EULA.override" = true;
+          "browser.ml.chat.enabled" = false;
           "gfx.webrender.all" = true;
         };
       };

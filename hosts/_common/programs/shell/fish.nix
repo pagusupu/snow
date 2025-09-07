@@ -18,6 +18,9 @@
         gp = "git push -u origin";
         gs = "git status -s";
         gsv = "git status -v";
+
+        jj = "javac $argv.java && java $argv";
+        cc = "gcc $argv.c -o $argv.out && ./$argv.out";
       };
       plugins =
         map (name: {

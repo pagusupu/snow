@@ -19,6 +19,7 @@
       heroic
       prismlauncher
       qbittorrent
+      rstudio
       ryubing
       wowup-cf
       inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin

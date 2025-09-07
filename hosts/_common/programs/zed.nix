@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home-manager.users.pagu = {
     programs.zed-editor = {
       enable = true;
@@ -19,10 +15,6 @@
           light = "Rosé Pine Dawn";
         };
         languages = {
-          C = {
-            format_on_save = "on";
-            tab_size = 4;
-          };
           Nix = {
             formatter.external = {
               command = "alejandra";
@@ -30,9 +22,7 @@
             };
             language_servers = ["nil" "!nixd"];
           };
-        };
-        lsp = {
-          jdtls.binary.path = lib.getExe pkgs.jdt-language-server;
+          C.tab_size = 4;
         };
         disable_ai = true;
         ui_font_size = 16;
