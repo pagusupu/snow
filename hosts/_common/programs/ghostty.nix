@@ -8,7 +8,7 @@ _: {
         cursor-style-blink = false;
         keybind = ["ctrl+shift+w=close_surface"];
         term = "xterm-256color";
-        theme = "rose-pine";
+        theme = "Rose Pine";
       };
       enableFishIntegration = true;
     };

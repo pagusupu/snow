@@ -22,6 +22,7 @@
       rstudio
       ryubing
       wowup-cf
+      youtube-music
       inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
     ];
 
@@ -31,15 +32,24 @@
     "jdks/8".source = lib.getBin pkgs.openjdk8;
   };
 
+  imports = with inputs; [
+    aagl.nixosModules.default
+    nix-gaming.nixosModules.pipewireLowLatency
+  ];
+  nix.settings = {
+    substituters = [
+      "https://nix-gaming.cachix.org"
+      "https://ezkea.cachix.org"
+    ];
+    trusted-public-keys = [
+      "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
+      "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
+    ];
+  };
   services.pipewire.lowLatency = {
     enable = true;
     quantum = 48;
     rate = 48000;
   };
-  imports = [inputs.nix-gaming.nixosModules.pipewireLowLatency];
-
-  nix.settings = {
-    substituters = ["https://nix-gaming.cachix.org"];
-    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
-  };
+  programs.anime-game-launcher.enable = true;
 }

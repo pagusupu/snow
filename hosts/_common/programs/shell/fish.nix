@@ -31,7 +31,7 @@
           "fish-bd"
           "fish-you-should-use"
           "puffer"
-          "sponge"
+          # "sponge"
         ];
       shellInit = ''
         set -u fish_greeting

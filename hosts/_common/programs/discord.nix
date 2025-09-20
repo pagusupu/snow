@@ -60,8 +60,6 @@
           };
           alwaysAnimate.enable = true;
           betterGifAltText.enable = true;
-          betterGifPicker.enable = true;
-          # betterSettings.enable = true;
           betterUploadButton.enable = true;
           clearURLs.enable = true;
           disableCallIdle.enable = true;
@@ -81,7 +79,6 @@
           noProfileThemes.enable = true;
           onePingPerDM.enable = true;
           plainFolderIcon.enable = true;
-          silentMessageToggle.enable = true;
           stickerPaste.enable = true;
           unindent.enable = true;
           userMessagesPronouns.enable = true;
