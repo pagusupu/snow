@@ -17,7 +17,6 @@
 
     hosts.url = "github:StevenBlack/hosts";
     paguvim.url = "github:pagusupu/paguvim";
-    qbit.url = "github:fsnkty/nixpkgs?ref=init-nixos-qbittorrent";
 
     # parts
     pre-commit-hooks = {

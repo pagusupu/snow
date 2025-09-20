@@ -2,16 +2,13 @@
   config,
   nginxlib,
   pkgs,
-  inputs,
   ...
 }: {
-  imports = ["${inputs.qbit}/nixos/modules/services/torrent/qbittorrent.nix"];
   services = let
     port = 8077;
   in {
     qbittorrent = {
       enable = true;
-      package = inputs.qbit.legacyPackages.${pkgs.system}.qbittorrent-nox;
       openFirewall = true;
       webuiPort = port;
       torrentingPort = 43862;
@@ -48,10 +45,7 @@
           };
           WebUI = {
             AlternativeUIEnabled = true;
-            RootFolder = "${pkgs.fetchzip {
-              url = "https://github.com/VueTorrent/VueTorrent/releases/download/v2.26.0/vuetorrent.zip";
-              hash = "sha256-EFVzsr/OZ/QMJ+NN3kDkmIk6FCCnqgK6DgsLWNonspU=";
-            }}";
+            RootFolder = "${pkgs.vuetorrent}/share/vuetorrent";
 
             Username = "pagu";
             Password_PBKDF2 = ''"@ByteArray(kZipcTwDuigp5wDRkynNQA==:roLYJRl9n/jcGRTXzgont6GAsBm7Bu7LGfrUfB7QcQqgQRSOLNvBs9YrC6h8nMgN/4e4dDETmAQGF16S+zBD5Q==)"'';

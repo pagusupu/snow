@@ -20,39 +20,24 @@
         icons = "auto";
         extraOptions = ["--group-directories-first"];
       };
-      yazi = {
-        enable = true;
-        settings.manager = {
-          show_hidden = true;
-          sort_by = "natural";
-          sort_dir_first = true;
-        };
-        plugins = {
-          inherit
-            (pkgs.yaziPlugins)
-            full-border
-            no-status
-            starship
-            ;
-        };
-        initLua = ''
-          require("full-border"):setup()
-          require("no-status"):setup()
-          require("starship"):setup()
-        '';
-      };
       zoxide.enable = true;
     };
+    home.packages =
+      /*
+      let
+        ouch = pkgs.ouch.override {enableUnfree = true;};
+      in
+      */
+      with pkgs; [
+        dust
+        nurl
+        ouch
+        rip2
+        wget
+        inputs.paguvim.packages.${pkgs.system}.default
+      ];
   };
   environment = {
-    systemPackages = with pkgs; [
-      dust
-      nurl
-      ouch
-      rip2
-      wget
-      inputs.paguvim.packages.${pkgs.system}.default
-    ];
     binsh = lib.getExe pkgs.dash;
     sessionVariables.EDITOR = "nvim";
   };

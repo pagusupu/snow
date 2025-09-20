@@ -52,12 +52,12 @@ _: {
                     {
                       title = "Stuff";
                       links = [
+                        (bookmark "Canvas" "https://canvas.aut.ac.nz/")
                         (bookmark "Nix Search" "https://search.nixos.org/packages?channel=unstable")
                         (bookmark "HM Search" "https://home-manager-options.extranix.com/?query=&release=master")
                         (bookmark "GitHub" "https://github.com")
                         (bookmark "Tailscale" "https://login.tailscale.com/admin/machines")
                         (bookmark "Cloudflare" "https://dash.cloudflare.com")
-                        (bookmark "Placeholder" "http://192.168.178.182:8333")
                       ];
                     }
                   ];
@@ -70,11 +70,11 @@ _: {
                       same-tab = true;
                     };
                   in [
-                    (service "Jellyfin" "http://192.168.178.182:8096" "si:jellyfin")
-                    (service "Navidrome" "http://192.168.178.182:8098" "si:soundcloud")
+                    (service "Jellyfin" "http://aoi:8096" "si:jellyfin")
+                    (service "Navidrome" "http://aoi:8098" "si:soundcloud")
                     (service "FreshRSS" "https://frss.pagu.cafe" "si:rss")
-                    (service "qBittorrent" "http://192.168.178.182:8077" "si:qbittorrent")
-                    (service "Immich" "http://192.168.178.182:3001" "si:immich")
+                    (service "qBittorrent" "http://aoi:8077" "si:qbittorrent")
+                    (service "Immich" "http://aoi:3001" "si:immich")
                     (service "Vaultwarden" "https://wrdn.pagu.cafe" "si:vaultwarden")
                   ];
                   cache = "1m";
