@@ -66,11 +66,10 @@
           dontRoundMyTimestamps.enable = true;
           favoriteEmojiFirst.enable = true;
           favoriteGifSearch.enable = true;
-          fakeNitro.enable = true;
+          # fakeNitro.enable = true;
           fixImagesQuality.enable = true;
           fixSpotifyEmbeds.enable = true;
           fixYoutubeEmbeds.enable = true;
-          friendsSince.enable = true;
           gameActivityToggle.enable = true;
           loadingQuotes.enable = true;
           messageClickActions.enable = true;

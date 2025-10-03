@@ -23,6 +23,7 @@
             language_servers = ["nil" "!nixd"];
           };
           C.tab_size = 4;
+          "C++".format_on_save = "on";
         };
         disable_ai = true;
         ui_font_size = 16;

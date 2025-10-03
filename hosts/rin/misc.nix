@@ -17,6 +17,7 @@
       cartridges
       downsampler-threaded
       heroic
+      lutris
       prismlauncher
       qbittorrent
       rstudio
