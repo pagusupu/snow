@@ -16,6 +16,7 @@
       bottles
       cartridges
       downsampler-threaded
+      eclipses.eclipse-java
       heroic
       lutris
       prismlauncher

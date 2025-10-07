@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   home-manager.users.pagu = {
     programs.zed-editor = {
       enable = true;
@@ -25,6 +29,7 @@
           C.tab_size = 4;
           "C++".format_on_save = "on";
         };
+        lsp.jdtls.binary.path = lib.getExe pkgs.jdt-language-server;
         disable_ai = true;
         ui_font_size = 16;
         buffer_font_size = 14;
