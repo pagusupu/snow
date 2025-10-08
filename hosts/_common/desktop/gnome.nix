@@ -23,9 +23,9 @@
       ]
       ++ (with pkgs.gnomeExtensions; [
         appindicator
-        blur-my-shell
+        dash-to-dock
         fullscreen-avoider
-        quick-settings-tweaker
+        # quick-settings-tweaker
         removable-drive-menu
         user-themes
       ]);
@@ -38,14 +38,6 @@
     };
     avahi.nssmdns4 = true;
   };
-
-  hardware.bluetooth.settings.General = {
-    Enable = "Source,Sink,Media,Socket";
-    Experimental = true;
-    KernelExperimental = true;
-    JustWorksRepairing = "always";
-  };
-
   boot = {
     plymouth.enable = true;
     kernelParams = ["quiet" "splash"];

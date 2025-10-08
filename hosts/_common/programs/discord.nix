@@ -3,7 +3,21 @@
     programs.nixcord = {
       enable = true;
       discord.enable = false;
-      vesktop.enable = true;
+      vesktop = {
+        enable = true;
+        settings = {
+          appBadge = false;
+          arRPC = true;
+          customTitleBar = false;
+          hardwareVideoAcceleration = true;
+          minimizeToTray = false;
+          staticTitle = true;
+          tray = false;
+          # rose pine
+          splashColor = "rgb(192, 189, 219)";
+          splashBackground = "rgb(26, 24, 37)";
+        };
+      };
       config = {
         plugins = {
           accountPanelServerProfile = {

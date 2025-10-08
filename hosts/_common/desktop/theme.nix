@@ -17,21 +17,9 @@
     };
     qt = {
       enable = true;
-      platformTheme.name = "adwaita";
-      style.name = "adwaita-dark";
+      platformTheme.name = "gtk";
     };
     home = {
-      packages = let
-        shell = pkgs.marble-shell-theme.override {
-          colors = ["purple"];
-          additionalInstallationTweaks = [
-            "--mode=dark"
-            #"--floating-panel"
-          ];
-        };
-      in [
-        shell
-      ];
       pointerCursor = {
         name = "BreezeX-RosePine-Linux";
         package = pkgs.rose-pine-cursor;
@@ -39,6 +27,12 @@
         gtk.enable = true;
         x11.enable = true;
       };
+      packages = let
+        shell = pkgs.marble-shell-theme.override {
+          additionalInstallationTweaks = ["--mode=dark"];
+          colors = ["purple"];
+        };
+      in [shell];
     };
   };
 }

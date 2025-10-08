@@ -2,6 +2,7 @@
   fonts = {
     packages = with pkgs;
       [
+        adwaita-fonts
         lato
         noto-fonts
         noto-fonts-cjk-sans

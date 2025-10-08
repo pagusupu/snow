@@ -19,11 +19,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
     hosts.url = "github:StevenBlack/hosts";
     nixcord.url = "github:kaylorben/nixcord";
     nix-gaming.url = "github:fufexan/nix-gaming";
     paguvim.url = "github:pagusupu/paguvim";
+
+    cmake-workaround.url = "github:NixOS/nixpkgs/7df7ff7d8e00218376575f0acdcc5d66741351ee";
 
     # parts
     pre-commit-hooks = {

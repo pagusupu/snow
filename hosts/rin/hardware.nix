@@ -1,21 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   boot = {
-    loader = {
-      grub = {
-        enable = true;
-        configurationLimit = 5;
-        device = "nodev";
-        efiSupport = true;
-        useOSProber = true;
-        theme = pkgs.minimal-grub-theme;
-      };
-      efi.canTouchEfiVariables = true;
-      timeout = 1;
-    };
-
     initrd.supportedFilesystems.btrfs = true;
-    supportedFilesystems.ntfs = true;
-
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelParams = ["amd_pstate=guided"];
     kernelModules = ["amd_pstate" "amdgpu" "kvm-amd"];
@@ -26,7 +15,7 @@
   hardware = {
     graphics = {
       enable = true;
-      extraPackages = [pkgs.libvdpau-va-gl];
+      extraPackages = [inputs.cmake-workaround.legacyPackages.${pkgs.system}.libvdpau-va-gl];
     };
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;

@@ -9,7 +9,6 @@
     users.pagu.home = {
       homeDirectory = "/home/pagu";
       username = "pagu";
-      stateVersion = "24.11";
     };
     extraSpecialArgs = {inherit inputs;};
     useGlobalPkgs = true;
