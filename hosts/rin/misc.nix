@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  inputs,
   ...
 }: {
   home-manager.users.pagu.home = {
@@ -16,7 +15,7 @@
         heroic
         prismlauncher
         qbittorrent
-        inputs.cmake-workaround.legacyPackages.${pkgs.system}.rstudio
+        # rstudio
         wowup-cf
         youtube-music
       ];

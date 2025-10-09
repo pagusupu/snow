@@ -24,7 +24,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     paguvim.url = "github:pagusupu/paguvim";
 
-    cmake-workaround.url = "github:NixOS/nixpkgs/7df7ff7d8e00218376575f0acdcc5d66741351ee";
+    vdpau-temp-fix.url = "github:NixOS/nixpkgs/1aaad1adbe24fafeeb30b50070ff9e239314ba2b";
 
     # parts
     pre-commit-hooks = {

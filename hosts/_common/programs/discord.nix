@@ -8,14 +8,13 @@
         settings = {
           appBadge = false;
           arRPC = true;
-          customTitleBar = false;
-          hardwareVideoAcceleration = true;
-          minimizeToTray = false;
+          discordBranch = "stable";
+          # hardwareVideoAcceleration = true;
           staticTitle = true;
           tray = false;
           # rose pine
-          splashColor = "rgb(192, 189, 219)";
           splashBackground = "rgb(26, 24, 37)";
+          splashColor = "rgb(192, 189, 219)";
         };
       };
       config = {
@@ -82,8 +81,7 @@
           dontRoundMyTimestamps.enable = true;
           favoriteEmojiFirst.enable = true;
           favoriteGifSearch.enable = true;
-          # fakeNitro.enable = true;
-          # fakeProfileThemes.enable = true;
+          fakeNitro.enable = true;
           fixImagesQuality.enable = true;
           fixSpotifyEmbeds.enable = true;
           fixYoutubeEmbeds.enable = true;

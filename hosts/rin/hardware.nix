@@ -15,7 +15,10 @@
   hardware = {
     graphics = {
       enable = true;
-      extraPackages = [inputs.cmake-workaround.legacyPackages.${pkgs.system}.libvdpau-va-gl];
+      extraPackages = [
+        inputs.vdpau-temp-fix.legacyPackages.${pkgs.system}.libvdpau-va-gl
+        # pkgs.libvdpau-va-gl
+      ];
     };
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;
