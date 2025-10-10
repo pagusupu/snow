@@ -15,7 +15,7 @@
         heroic
         prismlauncher
         qbittorrent
-        # rstudio
+        rstudio
         wowup-cf
         youtube-music
       ];

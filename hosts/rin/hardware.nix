@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   boot = {
     initrd.supportedFilesystems.btrfs = true;
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
@@ -15,10 +11,7 @@
   hardware = {
     graphics = {
       enable = true;
-      extraPackages = [
-        inputs.vdpau-temp-fix.legacyPackages.${pkgs.system}.libvdpau-va-gl
-        # pkgs.libvdpau-va-gl
-      ];
+      extraPackages = [pkgs.libvdpau-va-gl];
     };
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;

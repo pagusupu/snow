@@ -9,7 +9,7 @@
           appBadge = false;
           arRPC = true;
           discordBranch = "stable";
-          # hardwareVideoAcceleration = true;
+          hardwareVideoAcceleration = true;
           staticTitle = true;
           tray = false;
           # rose pine
