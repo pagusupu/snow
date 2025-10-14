@@ -8,6 +8,15 @@
   };
   powerManagement.cpuFreqGovernor = "schedutil";
 
+  security = {
+    sudo-rs = {
+      enable = true;
+      execWheelOnly = true;
+      wheelNeedsPassword = false;
+    };
+    tpm2.enable = true;
+  };
+
   hardware = {
     graphics = {
       enable = true;
@@ -17,6 +26,7 @@
     enableRedistributableFirmware = true;
     xone.enable = true;
   };
+  time.hardwareClockInLocalTime = true;
 
   fileSystems = {
     "/boot" = {

@@ -1,4 +1,4 @@
-{inputs, ...}: {
+_: {
   perSystem = {
     config,
     pkgs,
@@ -17,5 +17,4 @@
       shellHook = config.pre-commit.installationScript;
     };
   };
-  imports = [inputs.pre-commit-hooks.flakeModule];
 }

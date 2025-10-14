@@ -3,6 +3,11 @@
   lib,
   ...
 }: {
+  imports = [
+    ./grub.nix
+    ./hardware.nix
+  ];
+
   home-manager.users.pagu.home = {
     packages = let
       bottles = pkgs.bottles.override {removeWarningPopup = true;};
@@ -21,6 +26,7 @@
       ];
     stateVersion = "24.11";
   };
+  system.stateVersion = "24.11";
 
   networking = {
     hostName = "rin";

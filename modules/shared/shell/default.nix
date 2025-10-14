@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  imports = [
+    ./starship.nix
+    ./tools.nix
+    ./yazi.nix
+  ];
   home-manager.users.pagu = {
     programs.fish = {
       enable = true;
@@ -18,10 +23,6 @@
         gp = "git push -u origin";
         gs = "git status -s";
         gsv = "git status -v";
-
-        jj = "javac $argv.java && java $argv";
-        c = "gcc $argv.c -o $argv.out && ./$argv.out";
-        cc = "c++ $argv.cpp -o $argv.out && ./$argv.out";
       };
       plugins =
         map (name: {
@@ -32,7 +33,6 @@
           "fish-bd"
           "fish-you-should-use"
           "puffer"
-          # "sponge"
         ];
       shellInit = ''
         set -u fish_greeting

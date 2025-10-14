@@ -50,5 +50,11 @@
       ];
     };
   };
-  programs.nix-ld.enable = true;
+  programs = {
+    fish.shellAliases = {
+      c = "gcc $argv.c -o $argv.out && ./$argv.out";
+      cc = "c++ $argv.cpp -o $argv.out && ./$argv.out";
+    };
+    nix-ld.enable = true;
+  };
 }

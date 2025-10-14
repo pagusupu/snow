@@ -1,4 +1,4 @@
-{inputs, ...}: {
+_: {
   perSystem = _: {
     treefmt = {
       settings.global.excludes = [
@@ -16,5 +16,4 @@
       projectRootFile = "flake.nix";
     };
   };
-  imports = [inputs.treefmt-nix.flakeModule];
 }

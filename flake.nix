@@ -1,7 +1,7 @@
 {
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = [./hosts ./parts];
+      imports = [./parts];
       systems = ["x86_64-linux"];
     };
 
@@ -11,7 +11,8 @@
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      url = "gitlab:rycee/nur-expressions/badfc272422134c7201891e1c1b8a3d465270956?dir=pkgs/firefox-addons";
+      # url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "unstable";
     };
     home-manager = {
@@ -24,8 +25,6 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     paguvim.url = "github:pagusupu/paguvim";
 
-    vdpau-temp-fix.url = "github:NixOS/nixpkgs/1aaad1adbe24fafeeb30b50070ff9e239314ba2b";
-
     # parts
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
@@ -35,7 +34,7 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "unstable";
     };
+    easy-hosts.url = "github:tgirlcloud/easy-hosts";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
-  description = "the cutest flake";
 }

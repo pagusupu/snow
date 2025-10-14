@@ -35,7 +35,6 @@
       };
       flake = "/home/pagu/snow/";
     };
-    system.stateVersion = "24.11";
   }
   {
     nix = {

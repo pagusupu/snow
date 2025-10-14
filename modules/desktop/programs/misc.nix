@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home-manager.users.pagu = {
     home.packages = with pkgs; [
+      adwsteamgtk
       feishin
       obsidian
     ];

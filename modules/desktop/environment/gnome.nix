@@ -25,19 +25,17 @@
         appindicator
         dash-to-dock
         fullscreen-avoider
-        # quick-settings-tweaker
         removable-drive-menu
         user-themes
       ]);
     gnome.excludePackages = [pkgs.gnome-tour];
   };
-  services = {
-    gnome = {
-      core-apps.enable = false;
-      sushi.enable = true;
-    };
-    avahi.nssmdns4 = true;
+
+  services.gnome = {
+    core-apps.enable = false;
+    sushi.enable = true;
   };
+
   boot = {
     plymouth.enable = true;
     kernelParams = ["quiet" "splash"];
