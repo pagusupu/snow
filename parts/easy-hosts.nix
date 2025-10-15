@@ -1,14 +1,21 @@
 {inputs, ...}: {
   easy-hosts = {
     hosts = {
-      rin.modules = [../modules/desktop];
+      aoi = {
+        modules = [
+          ../modules/server
+          inputs.home-manager-stable.nixosModules.home-manager
+        ];
+        nixpkgs = inputs.stable;
+        # deployable = true;
+      };
+      rin.modules = [
+        ../modules/desktop
+        inputs.home-manager.nixosModules.home-manager
+      ];
     };
     shared = {
-      modules = with inputs; [
-        ../modules/shared
-        home-manager.nixosModules.home-manager
-        hosts.nixosModule
-      ];
+      modules = [../modules/shared];
       specialArgs = {inherit inputs;};
     };
     path = ../hosts;

@@ -10,17 +10,20 @@
     stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "unstable";
+    };
+    home-manager-stable = {
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "stable";
+    };
+
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions/badfc272422134c7201891e1c1b8a3d465270956?dir=pkgs/firefox-addons";
       # url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "unstable";
     };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hosts.url = "github:StevenBlack/hosts";
     nixcord.url = "github:kaylorben/nixcord";
     nix-gaming.url = "github:fufexan/nix-gaming";
     paguvim.url = "github:pagusupu/paguvim";
@@ -34,6 +37,7 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "unstable";
     };
+    agenix.url = "github:ryantm/agenix";
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };

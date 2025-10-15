@@ -24,10 +24,9 @@
   };
 
   networking = {
-    stevenBlackHosts = {
+    stevenblack = {
       enable = true;
-      blockFakenews = true;
-      blockGambling = true;
+      block = ["fakenews" "gambling"];
     };
     enableIPv6 = false;
     nameservers = ["1.0.0.1" "1.1.1.1"];
