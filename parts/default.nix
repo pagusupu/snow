@@ -1,11 +1,11 @@
 {inputs, ...}: {
   imports = with inputs; [
-    easy-hosts.flakeModule
     ./easy-hosts.nix
-    pre-commit-hooks.flakeModule
     ./pre-commit.nix
-    treefmt-nix.flakeModule
     ./treefmt.nix
+    easy-hosts.flakeModule
+    pre-commit-hooks.flakeModule
+    treefmt-nix.flakeModule
     flake-parts.flakeModules.easyOverlay
   ];
   perSystem = {

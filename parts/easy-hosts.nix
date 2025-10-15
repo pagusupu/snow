@@ -3,7 +3,7 @@
     hosts = {
       aoi = {
         modules = [
-          ../modules/server
+          ../modules/server.nix
           inputs.home-manager-stable.nixosModules.home-manager
         ];
         nixpkgs = inputs.stable;
