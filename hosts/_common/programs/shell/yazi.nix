@@ -28,10 +28,12 @@
             name = "*.${type}";
             run = "rich-preview";
           };
-          media = type: {
+          /*
+            media = type: {
             mime = type;
             run = "mediainfo";
           };
+          */
         in {
           prepend_previewers = [
             (ouch "*zip")
@@ -42,13 +44,15 @@
             (rich "md")
             (rich "json")
 
+            # (media "{audio,video,image}/*")
+            # (media "application/subrip")
+          ];
+          /*
+            prepend_preloaders = [
             (media "{audio,video,image}/*")
             (media "application/subrip")
           ];
-          prepend_preloaders = [
-            (media "{audio,video,image}/*")
-            (media "application/subrip")
-          ];
+          */
         };
       };
       initLua = ''
