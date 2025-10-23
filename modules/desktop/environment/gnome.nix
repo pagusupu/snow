@@ -17,6 +17,7 @@
         loupe
         nautilus
         papers
+        pinta
         resources
         sticky-notes
         switcheroo

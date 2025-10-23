@@ -28,6 +28,7 @@
         EnableStarRating = false;
         EnableTranscodingConfig = true;
         IgnoredArticles = "";
+        Scanner.PurgeMissing = "always";
         SessionTimeout = "96h";
         ShareURL = "https://navi.${config.networking.domain}";
         UIWelcomeMessage = "";

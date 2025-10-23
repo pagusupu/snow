@@ -5,13 +5,13 @@
       extensions = [
         "nix"
         "toml"
-        "rose-pine-theme"
+        "zedwaita"
       ];
       userSettings = {
         theme = {
           mode = "system";
-          dark = "Rosé Pine";
-          light = "Rosé Pine Dawn";
+          dark = "Zedwaita Dark";
+          light = "Zedwaita Light";
         };
         languages = {
           Nix = {

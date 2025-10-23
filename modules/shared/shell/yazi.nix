@@ -6,7 +6,6 @@
         inherit
           (pkgs.yaziPlugins)
           full-border
-          mediainfo
           no-status
           ouch
           rich-preview
@@ -19,7 +18,7 @@
           sort_by = "natural";
           sort_dir_first = true;
         };
-        plugin = let
+        plugin.prepend_previewers = let
           ouch = type: {
             mime = "application/${type}";
             run = "ouch";
@@ -28,28 +27,14 @@
             name = "*.${type}";
             run = "rich-preview";
           };
-          media = type: {
-            mime = type;
-            run = "mediainfo";
-          };
-        in {
-          prepend_previewers = [
-            (ouch "*zip")
-            (ouch "x-tar")
-            (ouch "x-rar")
-            (ouch "x-7z-compressed")
-
-            (rich "md")
-            (rich "json")
-
-            (media "{audio,video,image}/*")
-            (media "application/subrip")
-          ];
-          prepend_preloaders = [
-            (media "{audio,video,image}/*")
-            (media "application/subrip")
-          ];
-        };
+        in [
+          (ouch "*zip")
+          (ouch "x-tar")
+          (ouch "x-rar")
+          (ouch "x-7z-compressed")
+          (rich "md")
+          (rich "json")
+        ];
       };
       initLua = ''
         require("full-border"):setup()
@@ -57,10 +42,6 @@
         require("starship"):setup()
       '';
     };
-    home.packages = with pkgs; [
-      imagemagick
-      mediainfo
-      rich-cli
-    ];
+    home.packages = [pkgs.rich-cli];
   };
 }

@@ -19,11 +19,7 @@
       inputs.nixpkgs.follows = "stable";
     };
 
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions/badfc272422134c7201891e1c1b8a3d465270956?dir=pkgs/firefox-addons";
-      # url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "unstable";
-    };
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     nixcord.url = "github:kaylorben/nixcord";
     nix-gaming.url = "github:fufexan/nix-gaming";
     paguvim.url = "github:pagusupu/paguvim";

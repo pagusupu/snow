@@ -18,6 +18,10 @@ _: {
     hostName = "aoi";
     hostId = "a3b49b22";
   };
+  services.tailscale.extraUpFlags = [
+    "--advertise-exit-node"
+    "--exit-node-allow-lan-access"
+  ];
   system.stateVersion = "23.11";
   home-manager.users.pagu.home.stateVersion = "23.05";
 }

@@ -17,22 +17,29 @@
       };
       eza = {
         enable = true;
+        extraOptions = [
+          "--group-directories-first"
+          "--no-permissions"
+          "--no-time"
+          "--octal-permissions"
+        ];
         icons = "auto";
-        extraOptions = ["--group-directories-first"];
       };
       zoxide.enable = true;
     };
     home.packages = let
       ouch = pkgs.ouch.override {enableUnfree = true;};
     in
-      with pkgs; [
+      [
+        ouch
+        inputs.paguvim.packages.${pkgs.system}.default
+      ]
+      ++ (with pkgs; [
         dust
         nurl
-        ouch
         rip2
         wget
-        inputs.paguvim.packages.${pkgs.system}.default
-      ];
+      ]);
   };
   environment = {
     binsh = lib.getExe pkgs.dash;
