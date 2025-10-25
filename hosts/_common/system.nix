@@ -5,7 +5,7 @@
   ...
 }: {
   imports = with inputs; [
-    agenix.nixosModules.default
+    ragenix.nixosModules.default
     hosts.nixosModule
   ];
 
@@ -34,7 +34,7 @@
     useDHCP = false;
   };
 
-  environment.systemPackages = [inputs.agenix.packages.${pkgs.system}.default];
+  environment.systemPackages = [inputs.ragenix.packages.${pkgs.system}.default];
   age.identityPaths = ["/etc/ssh/${config.networking.hostName}_ed25519_key"];
 
   services.openssh = {

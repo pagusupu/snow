@@ -27,8 +27,8 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "unstable";
     };
-    agenix.url = "github:ryantm/agenix";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    ragenix.url = "github:/yaxitech/ragenix";
   };
   description = "the cutest flake";
 }
