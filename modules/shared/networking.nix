@@ -6,6 +6,7 @@
         PasswordAuthentication = false;
         PermitRootLogin = "no";
         KbdInteractiveAuthentication = false;
+        # WarnWeakCrypto = "no";
       };
       hostKeys = [
         {
@@ -13,7 +14,10 @@
           type = "ed25519";
         }
       ];
-      knownHosts."github.com".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl";
+      knownHosts = {
+        aoi.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICR4g9u714ldK2AjbqpHUL3CMnBm18EsaTNUqWitzNkN";
+        "github.com".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl";
+      };
     };
     tailscale = {
       enable = true;

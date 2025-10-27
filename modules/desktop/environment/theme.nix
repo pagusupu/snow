@@ -13,8 +13,8 @@
       colorScheme = "dark";
     };
     qt = {
-      #enable = true;
-      #platformTheme.name = "gtk";
+      enable = true;
+      platformTheme.name = "gtk";
     };
     home = {
       pointerCursor = {
@@ -24,12 +24,12 @@
         gtk.enable = true;
         x11.enable = true;
       };
-      packages = let
-        shell = pkgs.marble-shell-theme.override {
+      packages = [
+        (pkgs.marble-shell-theme.override {
           additionalInstallationTweaks = ["--mode=dark" "-O"];
           colors = ["blue"];
-        };
-      in [shell];
+        })
+      ];
     };
   };
 }

@@ -14,10 +14,7 @@
         inputs.home-manager.nixosModules.home-manager
       ];
     };
-    shared = {
-      modules = [../modules/shared];
-      specialArgs = {inherit inputs;};
-    };
+    shared.modules = [../modules/shared];
     path = ../hosts;
   };
 }

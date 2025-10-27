@@ -20,26 +20,20 @@
         extraOptions = [
           "--group-directories-first"
           "--no-permissions"
-          "--no-time"
           "--octal-permissions"
         ];
         icons = "auto";
       };
       zoxide.enable = true;
     };
-    home.packages = let
-      ouch = pkgs.ouch.override {enableUnfree = true;};
-    in
-      [
-        ouch
-        inputs.paguvim.packages.${pkgs.system}.default
-      ]
-      ++ (with pkgs; [
-        dust
-        nurl
-        rip2
-        wget
-      ]);
+    home.packages = with pkgs; [
+      dust
+      nurl
+      rip2
+      wget
+      (ouch.override {enableUnfree = true;})
+      inputs.paguvim.packages.${pkgs.system}.default
+    ];
   };
   environment = {
     binsh = lib.getExe pkgs.dash;

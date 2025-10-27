@@ -9,22 +9,19 @@
   ];
 
   home-manager.users.pagu.home = {
-    packages = let
-      bottles = pkgs.bottles.override {removeWarningPopup = true;};
-    in
-      with pkgs; [
-        bottles
-        cartridges
-        downsampler-threaded
-        eclipses.eclipse-java
-        heroic
-        prismlauncher
-        qbittorrent
-        R
-        rstudio
-        wowup-cf
-        youtube-music
-      ];
+    packages = with pkgs; [
+      (bottles.override {removeWarningPopup = true;})
+      cartridges
+      downsampler-threaded
+      heroic
+      prismlauncher
+      qbittorrent
+      wowup-cf
+      youtube-music
+
+      eclipses.eclipse-java
+      rstudio
+    ];
     stateVersion = "24.11";
   };
   system.stateVersion = "24.11";
