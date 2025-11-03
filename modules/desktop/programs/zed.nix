@@ -3,6 +3,7 @@
     programs.zed-editor = {
       enable = true;
       extensions = [
+        "git-firefly"
         "nix"
         "toml"
         "zedwaita"

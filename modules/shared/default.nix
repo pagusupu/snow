@@ -24,18 +24,12 @@
     uid = 1000;
   };
 
-  # disable unused stuff
-  documentation = {
-    enable = false;
-    doc.enable = false;
-    info.enable = false;
-    nixos.enable = false;
-  };
   programs = {
     bash.completion.enable = false;
     command-not-found.enable = false;
     nano.enable = false;
   };
+
   boot.initrd = {
     systemd = {
       enable = true;

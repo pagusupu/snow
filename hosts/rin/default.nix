@@ -20,7 +20,6 @@
       youtube-music
 
       eclipses.eclipse-java
-      rstudio
     ];
     stateVersion = "24.11";
   };
