@@ -11,6 +11,7 @@
           bitwarden
           darkreader
           return-youtube-dislikes
+          shiori
           sponsorblock
           ublock-origin
         ];

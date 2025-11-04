@@ -15,6 +15,7 @@
     qt = {
       enable = true;
       platformTheme.name = "gtk";
+      style.name = "adwaita-dark";
     };
     home = {
       pointerCursor = {
@@ -31,5 +32,14 @@
         })
       ];
     };
+    /*
+      programs.gnome-shell.theme = {
+      name = "Marble-blue-dark";
+      package = pkgs.marble-shell-theme.override {
+        additionalInstallationTweaks = ["--mode=dark" "-O"];
+        colors = ["blue"];
+      };
+    };
+    */
   };
 }
