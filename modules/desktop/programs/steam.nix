@@ -18,7 +18,10 @@
         ];
         env.WLR_RENDERER = "vulkan";
       };
-      extraCompatPackages = [pkgs.proton-ge-bin];
+      extraCompatPackages = [
+        inputs.dw-proton.packages.${pkgs.system}.default
+        pkgs.proton-ge-bin
+      ];
       localNetworkGameTransfers.openFirewall = true;
       platformOptimizations.enable = true;
     };

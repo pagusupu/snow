@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   lib,
   ...
 }: {
@@ -12,14 +13,12 @@
     packages = with pkgs; [
       (bottles.override {removeWarningPopup = true;})
       cartridges
+      deadlock-mod-manager
       downsampler-threaded
       heroic
       prismlauncher
-      qbittorrent
-      wowup-cf
-      youtube-music
-
-      eclipses.eclipse-java
+      protonplus
+      inputs.hytale-launcher.packages.${pkgs.system}.default
     ];
     stateVersion = "24.11";
   };

@@ -33,7 +33,7 @@
         enable = true;
         extraArgs = "--keep 5 --keep-since 3d";
       };
-      flake = "/home/pagu/snow/";
+      flake = "/home/pagu/snow";
     };
   }
   {

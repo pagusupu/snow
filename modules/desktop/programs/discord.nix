@@ -43,25 +43,14 @@
           };
           newGuildSettings = {
             enable = true;
-            messages = "only@Mentions";
+            messages = 1;
             everyone = false;
             role = false;
             showAllChannels = false;
           };
-          noBlockedMessages = {
-            enable = true;
-            ignoreBlockedMessages = true;
-          };
           notificationVolume = {
             enable = true;
             notificationVolume = 50.0;
-          };
-          openInApp = {
-            enable = true;
-            epic = false;
-            itunes = false;
-            spotify = false;
-            tidal = false;
           };
           typingTweaks = {
             enable = true;
@@ -72,7 +61,7 @@
           betterGifAltText.enable = true;
           betterUploadButton.enable = true;
           biggerStreamPreview.enable = true;
-          clearURLs.enable = true;
+          #clearURLs.enable = true;
           disableCallIdle.enable = true;
           dontRoundMyTimestamps.enable = true;
           favoriteEmojiFirst.enable = true;
@@ -85,10 +74,12 @@
           hideMedia.enable = true;
           loadingQuotes.enable = true;
           messageClickActions.enable = true;
+          noBlockedMessages.enable = true;
           noF1.enable = true;
           noOnboardingDelay.enable = true;
           noProfileThemes.enable = true;
-          onePingPerDM.enable = true;
+          OnePingPerDM.enable = true;
+          openInApp.enable = true;
           petpet.enable = true;
           plainFolderIcon.enable = true;
           previewMessage.enable = true;

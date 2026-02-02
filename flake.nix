@@ -19,8 +19,10 @@
       inputs.nixpkgs.follows = "stable";
     };
 
+    dw-proton.url = "github:Momoyaan/dwproton-flake";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-    nixcord.url = "github:kaylorben/nixcord";
+    hytale-launcher.url = "github:JPyke3/hytale-launcher-nix";
+    nixcord.url = "github:flameflag/nixcord";
     nix-gaming.url = "github:fufexan/nix-gaming";
     paguvim.url = "github:pagusupu/paguvim";
 
