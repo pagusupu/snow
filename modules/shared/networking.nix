@@ -6,7 +6,6 @@
         PasswordAuthentication = false;
         PermitRootLogin = "no";
         KbdInteractiveAuthentication = false;
-        # WarnWeakCrypto = "no";
       };
       hostKeys = [
         {
@@ -33,7 +32,7 @@
       block = ["fakenews" "gambling"];
     };
     enableIPv6 = false;
-    nameservers = ["1.0.0.1" "1.1.1.1"];
+    nameservers = ["1.1.1.1" "1.0.0.1"];
   };
 
   programs.git = {

@@ -9,10 +9,13 @@
         nixpkgs = inputs.stable;
         # deployable = true;
       };
-      rin.modules = [
-        ../modules/desktop
-        inputs.home-manager.nixosModules.home-manager
-      ];
+      rin = {
+        modules = [
+          ../modules/desktop
+          inputs.home-manager.nixosModules.home-manager
+        ];
+        nixpkgs = inputs.unstable;
+      };
     };
     shared.modules = [../modules/shared];
     path = ../hosts;

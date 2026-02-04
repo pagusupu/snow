@@ -12,13 +12,10 @@ _: {
     };
   };
   networking = {
-    enableIPv6 = false;
-    firewall.enable = true;
     hostName = "aoi";
     hostId = "a3b49b22";
     useDHCP = false;
     useNetworkd = true;
-    nameservers = ["1.1.1.1" "1.0.0.1"];
   };
   services.tailscale.extraUpFlags = [
     "--advertise-exit-node"
