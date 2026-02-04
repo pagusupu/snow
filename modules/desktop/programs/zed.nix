@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home-manager.users.pagu = {
     programs.zed-editor = {
-      # enable = true;
+      enable = true;
       extensions = [
         "git-firefly"
         "nix"
