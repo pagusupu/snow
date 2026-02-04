@@ -1,27 +1,27 @@
 _: {
-  networking = let
+  systemd.network = let
     name = "enp37s0";
   in {
-    interfaces.${name} = {
+    enable = true;
+    networks.${name} = {
+      enable = true;
       inherit name;
-      useDHCP = false;
-      ipv4 = {
-        addresses = [
-          {
-            address = "192.168.178.182";
-            prefixLength = 24;
-          }
-        ];
-        routes = [{address = "192.168.178.1";}];
-      };
+      dns = ["1.1.1.1" "1.0.0.1"];
+      address = ["192.168.1.3/24"];
+      routes = [{Gateway = "192.168.1.1";}];
     };
     hostName = "aoi";
     hostId = "a3b49b22";
+  };
+  networking = {
+    enableIPv6 = false;
+    firewall.enable = true;
+    useDHCP = false;
+    useNetworkd = true;
+    nameservers = ["1.1.1.1" "1.0.0.1"];
   };
   services.tailscale.extraUpFlags = [
     "--advertise-exit-node"
     "--exit-node-allow-lan-access"
   ];
-  system.stateVersion = "23.11";
-  home-manager.users.pagu.home.stateVersion = "23.05";
 }

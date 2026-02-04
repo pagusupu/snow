@@ -7,7 +7,7 @@
 
   inputs = {
     nixpkgs.follows = "unstable";
-    stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+    stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "unstable";
     };
     home-manager-stable = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "stable";
     };
 

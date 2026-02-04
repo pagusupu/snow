@@ -26,17 +26,17 @@
           QueueingSystemEnabled = true;
           IgnoreSlowTorrentsForQueueing = true;
 
-          SlowTorrentsDownloadRate = 40;
-          SlowTorrentsUploadRate = 40;
-          GlobalDLSpeedLimit = 4500;
-          GlobalUPSpeedLimit = 5000;
+          SlowTorrentsDownloadRate = 100;
+          SlowTorrentsUploadRate = 100;
+          GlobalDLSpeedLimit = 0; # unlimited
+          GlobalUPSpeedLimit = 10000;
 
           MaxActiveCheckingTorrents = 2;
           MaxActiveDownloads = 3;
-          MaxActiveUploads = 500;
-          MaxActiveTorrents = 505;
-          MaxUploads = 500;
-          MaxConnections = 700;
+          MaxActiveUploads = 1000;
+          MaxActiveTorrents = 1005;
+          MaxUploads = 1000;
+          MaxConnections = 1000;
         };
         Preferences = {
           General = {

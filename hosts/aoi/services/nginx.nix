@@ -1,4 +1,4 @@
-_: {
+{config, ...}: {
   services.nginx = {
     enable = true;
     commonHttpConfig = ''
@@ -17,4 +17,26 @@ _: {
     defaults.email = "amce@pagu.cafe";
   };
   users.users.nginx.extraGroups = ["acme"];
+
+  # im aware how gross this is
+  _module.args.nginxlib = rec {
+    SSL = {
+      enableACME = true;
+      forceSSL = true;
+    };
+    host = subdomain: port: proxyWebsockets: extraConfig: {
+      virtualHosts."${subdomain}.${config.networking.domain}" =
+        {
+          locations."/" = {
+            proxyPass = "http://localhost:${builtins.toString port}";
+            inherit proxyWebsockets;
+            extraConfig =
+              if extraConfig != null
+              then extraConfig
+              else "";
+          };
+        }
+        // SSL;
+    };
+  };
 }

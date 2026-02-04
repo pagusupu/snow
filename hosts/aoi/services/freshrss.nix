@@ -15,7 +15,7 @@
       baseUrl = "https://${domain}";
       dataDir = "/storage/freshrss";
       defaultUser = "pagu";
-      passwordFile = config.age.secrets.freshrss.path;
+      passwordFile = config.age.secrets.freshrss.path; # only default, changed in webui
       virtualHost = domain;
     };
     nginx.virtualHosts.${domain} = nginxlib.SSL;

@@ -3,9 +3,8 @@
     builtins.filter (lib.hasSuffix ".nix")
     (map toString (lib.filesystem.listFilesRecursive x))) [
     ./config
-    # ./services
+    ./services
   ];
-
   system.stateVersion = "23.11";
   home-manager.users.pagu.home.stateVersion = "23.05";
 }

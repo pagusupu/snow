@@ -52,6 +52,10 @@
             enable = true;
             notificationVolume = 50.0;
           };
+          PinDMs = {
+            enable = true;
+            canCollapseDmSection = true;
+          };
           typingTweaks = {
             enable = true;
             showRoleColors = false;
@@ -61,7 +65,7 @@
           betterGifAltText.enable = true;
           betterUploadButton.enable = true;
           biggerStreamPreview.enable = true;
-          #clearURLs.enable = true;
+          ClearURLs.enable = true;
           disableCallIdle.enable = true;
           dontRoundMyTimestamps.enable = true;
           favoriteEmojiFirst.enable = true;
@@ -73,6 +77,7 @@
           fullSearchContext.enable = true;
           hideMedia.enable = true;
           loadingQuotes.enable = true;
+          mentionAvatars.enable = true;
           messageClickActions.enable = true;
           noBlockedMessages.enable = true;
           noF1.enable = true;
