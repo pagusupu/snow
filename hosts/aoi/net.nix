@@ -6,9 +6,16 @@ _: {
     networks.${name} = {
       enable = true;
       inherit name;
-      networkConfig.DHCP = "no";
-      address = ["192.168.178.182/24"];
-      routes = [{Gateway = "192.168.178.1";}];
+      dns = ["1.1.1.1" "1.0.0.1"];
+      address = ["192.168.1.3/24"];
+      routes = [{Gateway = "192.168.1.1";}];
     };
+  };
+  networking = {
+    firewall.enable = true;
+    useNetworkd = true;
+    useDHCP = false;
+    enableIPv6 = false;
+    nameservers = ["1.1.1.1" "1.0.0.1"];
   };
 }

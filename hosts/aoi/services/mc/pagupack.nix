@@ -1,5 +1,6 @@
 {
-  virtualisation.oci-containers.containers."minecraft" = {
+  /*
+    virtualisation.oci-containers.containers."minecraft" = {
     environment = {
       VERSION = "1.21.1";
       TYPE = "MODRINTH";
@@ -11,4 +12,5 @@
     ports = ["24454:24454/udp"]; # vc mod
     volumes = ["/home/pagu/minecraft/servers/pagupack:/data"];
   };
+  */
 }

@@ -23,15 +23,15 @@
   boot.enableContainers = false;
 
   networking = {
-    domain = "pagu.cafe";
+    domain = "pagu.page";
     stevenBlackHosts = {
       enable = true;
       blockFakenews = true;
       blockGambling = true;
     };
-    enableIPv6 = false;
-    nameservers = ["1.0.0.1" "1.1.1.1"];
-    useDHCP = false;
+    #enableIPv6 = false;
+    #  nameservers = ["1.0.0.1" "1.1.1.1"];
+    #  useDHCP = false;
   };
 
   environment.systemPackages = [inputs.ragenix.packages.${pkgs.system}.default];

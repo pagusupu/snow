@@ -1,12 +1,14 @@
 _: {
   imports = [
-    ./pagupack.nix
+    # ./pagupack.nix
+    ./newpack.nix
   ];
   virtualisation = {
     oci-containers.containers."minecraft" = {
       image = "itzg/minecraft-server:stable";
       ports = ["25565:25565"];
       autoStart = false;
+      pull = "always";
       environment = {
         EULA = "true";
         ENABLE_WHITELIST = "true";
