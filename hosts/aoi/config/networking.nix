@@ -10,12 +10,12 @@ _: {
       address = ["192.168.1.3/24"];
       routes = [{Gateway = "192.168.1.1";}];
     };
-    hostName = "aoi";
-    hostId = "a3b49b22";
   };
   networking = {
     enableIPv6 = false;
     firewall.enable = true;
+    hostName = "aoi";
+    hostId = "a3b49b22";
     useDHCP = false;
     useNetworkd = true;
     nameservers = ["1.1.1.1" "1.0.0.1"];
