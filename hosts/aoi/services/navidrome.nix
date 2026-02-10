@@ -2,12 +2,16 @@
   config,
   nginxlib,
   pkgs,
+  inputs,
   ...
 }: {
   services = let
     port = 8098;
   in {
     navidrome = {
+      # https://github.com/NixOS/nixpkgs/issues/481611
+      package = inputs.unstable.legacyPackages.${pkgs.system}.navidrome;
+
       enable = true;
       openFirewall = true;
       settings = let
@@ -36,9 +40,4 @@
     };
     nginx = nginxlib.host "navi" port true null;
   };
-  environment.systemPackages = with pkgs; [
-    downsampler-threaded
-    flac
-    sox
-  ];
 }

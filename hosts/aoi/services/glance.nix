@@ -1,4 +1,4 @@
-_: {
+{config, ...}: {
   services.glance = {
     enable = true;
     openFirewall = true;
@@ -41,7 +41,7 @@ _: {
                     {
                       title = "Frequent";
                       links = [
-                        (bookmark "Shiori" "https://shio.pagu.cafe")
+                        (bookmark "Shiori" "https://shio.pagu.page")
                         (bookmark "Gmail" "https://mail.google.com/mail/u/0")
                         (bookmark "Drive" "https://drive.google.com/drive/u/0/home")
                         (bookmark "Notes" "https://keep.google.com/u/0")
@@ -69,13 +69,14 @@ _: {
                       inherit title url icon;
                       same-tab = true;
                     };
+                    inherit (config.networking) domain;
                   in [
-                    (service "Jellyfin" "http://aoi:8096" "si:jellyfin")
-                    (service "Navidrome" "http://aoi:8098" "si:soundcloud")
-                    # (service "FreshRSS" "https://frss.pagu.cafe" "si:rss")
-                    (service "qBittorrent" "http://aoi:8077" "si:qbittorrent")
-                    (service "Immich" "http://aoi:3001" "si:immich")
-                    # (service "Vaultwarden" "https://wrdn.pagu.cafe" "si:vaultwarden")
+                    (service "Jellyfin" "https://jlly.${domain}" "si:jellyfin")
+                    (service "Navidrome" "https://navi.${domain}" "si:soundcloud")
+                    (service "FreshRSS" "https://frss.${domain}" "si:rss")
+                    (service "qBittorrent" "https://qbit.${domain}" "si:qbittorrent")
+                    (service "Immich" "https://pics.${domain}" "si:immich")
+                    (service "Vaultwarden" "https://wrdn.${domain}" "si:vaultwarden")
                   ];
                   cache = "1m";
                   title = "Services";
