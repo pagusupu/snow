@@ -20,4 +20,5 @@
     shared.modules = [../modules/shared];
     path = ../hosts;
   };
+  imports = [inputs.easy-hosts.flakeModule];
 }
