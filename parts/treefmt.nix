@@ -9,7 +9,7 @@
       programs = {
         alejandra.enable = true;
         deadnix.enable = true;
-        mdformat.enable = true;
+        # mdformat.enable = true;
         statix.enable = true;
       };
       flakeCheck = false;
