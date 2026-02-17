@@ -41,6 +41,7 @@
         require("no-status"):setup()
         require("starship"):setup()
       '';
+      shellWrapperName = "yy";
     };
     home.packages = [pkgs.rich-cli];
   };
